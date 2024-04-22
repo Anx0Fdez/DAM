@@ -1,0 +1,10 @@
+#Ignorar archivos
+.idea
+build
+nbproject
+out
+
+# Ignorar Extensiones
+*.iml
+*xml
+*.mf
