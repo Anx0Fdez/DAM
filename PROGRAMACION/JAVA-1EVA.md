@@ -19,9 +19,7 @@
 11. [**Clases**](#clases)
 ---
 ## ***Boletines | Ejercícios***
--> [***Boletines 1ª Evaluación***](PROGRAMACION/PROG-EJERC/1Trimestre)
-
-- [*<u>Uso de JUnit</u>*](COD/JUnit.md)
+- [***Boletines 1ª Evaluación***](https://github.com/Anx0Fdez/DAM/tree/afcad6763d2251e768409ac5b289edf4fee1c301/PROGRAMACION/PROG-EJERC/1Trimestre)
 
 ---
 ## *MODIFICADORES DE ACCESO*

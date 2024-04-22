@@ -19,6 +19,9 @@
 10. [**Arrays**](#arrays)
 
 ---
+## ***Boletines | Ejercícios***
+- [***Boletines 2ª Evaluación***](https://github.com/Anx0Fdez/DAM/tree/afcad6763d2251e768409ac5b289edf4fee1c301/PROGRAMACION/PROG-EJERC/2Trimestre)
+---
 
 ## *Serialización*
 Imagina que la serialización en Java es como guardar un dibujo en un sobre para enviarlo por correo. Para hacerlo:
