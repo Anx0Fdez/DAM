@@ -49,11 +49,16 @@ insert into t1 values (1); -- Insertar valores
 ```
 #### *CREAR Y ADMINISTRAR PERMISOS*
 ```sql
+a -- Añaadir
+r -- Quitar
+w -- Escribir
+d -- Borrar
+
 VER PERMISOS DE UN USUARIO [SELECT]
 select * from information_schema.table_privileges where grantee = 'u3'; -- Ver permisos de un usuario
 select * from information_schema.table_privileges where table_name = 'equipo'; -- Ver permisos de una tabla
+\z es3.* -- Ver permisos de un esquema
 ```
-
 ```sql
 DAR PERMISOS ENTRE USUARIOS [GRANT]
 -- Debes estar conectado con el usuario a ("psql dam a")
@@ -61,6 +66,7 @@ DAR PERMISOS ENTRE USUARIOS [GRANT]
 -> grant USAGE on schema a to b; -- Dar permisos a b en el esquema a
 -> alter default privileges in schema a grant select on tables to b; -- Dar permisos por defecto a b
 -> grant insert on es3.equipo to u4 with grant option; -- Dar permisos a u4 con opcion de dar el mismo permiso a otros
+-> grant select (codx, nomx) on xogador to u4; -- Dar permisos a u4 en las columnas codx y nomx de la tabla xogador
 ```
 ```sql
 QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
@@ -77,7 +83,7 @@ QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
 3. drop view v; -- Eliminar vista
 ```
 
-### ***<u>ERRORES FRECUENTES</u>***
+### ***[ERRORES FRECUENTES]***
 ```sql
 -- Errores frecuentes en PostgreSQL
 ERROR: permission denied for relation t1 -- No tienes permisos para ver la tabla t1
