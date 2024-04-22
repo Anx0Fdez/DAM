@@ -18,7 +18,12 @@
 10. [**Variables y tipos de datos**](#variables-y-tipos-de-datos)
 11. [**Clases**](#clases)
 ---
+## ***Boletines | Ejercícios***
+-> [***Boletines 1ª Evaluación***](PROGRAMACION/PROG-EJERC/1Trimestre)
 
+- [*<u>Uso de JUnit</u>*](COD/JUnit.md)
+
+---
 ## *MODIFICADORES DE ACCESO*
 ### `public` *El acceso a la clase, método o variable es ilimitado.*
 ### `private` *El acceso a la clase, método o variable es limitado.*
