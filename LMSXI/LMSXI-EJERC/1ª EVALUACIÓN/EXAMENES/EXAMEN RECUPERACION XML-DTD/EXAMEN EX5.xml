@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<axenda>
+    <persoa id="P1" sexo="binario">
+        <nome>Jesus Rodríguez</nome>
+        <email>jesus@gmail.com</email>
+        <email>jesus@danielcastelao.org</email>
+        <relacion amigo-de="P2/>
+    </persoa>
+    <persoa id="P2">
+        <nome>Aurelio Nuñez</nome>
+        <email>aurelio@gmail.com</email>
+        <email>aurelio@danielcastelao.org</email>
+        <relacion enemigo-de="P3/>
+    </persoa>
+</axenda>

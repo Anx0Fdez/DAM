@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<baloncesto>
+    <equipo>
+        <nome>Real Madrid</nome>
+        <cidade>Madrid</cidade>
+        <entrenador>Jose Rodriguez</entrenador>
+        <xogadores>
+            <xogador posicion="pivot">
+                <nome>Antonio Alves</nome>
+                <nacionalidade>Español</nacionalidade>
+            </xogador>
+            <xogador posicion="base">
+                <nome>Pedro Fernandez</nome>
+                <nacionalidade>Frances</nacionalidade>
+            </xogador>
+        </xogadores>
+    </equipo>
+    <equipo>
+        <nome>FC Barcelona</nome>
+        <cidade>Barcelona</cidade>
+        <entrenador/>
+        <xogadores>
+            <xogador posicion="escolta">
+                <nome>Juanjo Arias</nome>
+                <nacionalidade>Español</nacionalidade>
+            </xogador>
+            <xogador posicion="aleiro">
+                <nome>Óscar Cao</nome>
+                <nacionalidade>Español</nacionalidade>
+            </xogador>
+        </xogadores>
+    </equipo>
+</baloncesto>

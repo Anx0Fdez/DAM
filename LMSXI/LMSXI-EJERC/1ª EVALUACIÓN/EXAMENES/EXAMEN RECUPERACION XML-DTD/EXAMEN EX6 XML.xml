@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<clase>
+    <alumno num_alumno="A1" altura="180cm" sexo="home">
+        <nome>Jose</nome>
+        <apelidos>Fernandez Alves</apelidos>
+        <domicilio>Calle Terra do Camiño 12</domicilio>
+        <telefono propiedade="propio">123456789</telefono>
+        <equipo>Equipo4</equipo>
+
+        <procedencia>
+            <orixe>Español</orixe>
+            <direccion>Calle Terra de Souto 22</direccion>
+            <cidade>Ourense</cidade>
+            <provincia>Ourense</provincia>
+            <nacionalidade>Española</nacionalidade>
+        </procedencia>
+        <comentario>E bo alumno</comentario>
+        <axuda axudante="A2"/>
+    </alumno>
+    <alumno num_alumno="A2">
+        <nome>Maria</nome>
+        <apelidos>Oulego Alvarez</apelidos>
+        <domicilio>Calle Virxe do Pilar 122</domicilio>
+        <telefono propiedade="pai">987654321</telefono>
+        <afeccions>Futbol</afeccions>
+        <afeccions>Tenis</afeccions>
+
+        <procedencia>
+            <orixe>Español</orixe>
+            <direccion>Calle do Cobelo 221</direccion>
+            <cidade>Ourense</cidade>
+            <provincia>Ourense</provincia>
+            <nacionalidade>Española</nacionalidade>
+        </procedencia>
+    </alumno>
+</clase>

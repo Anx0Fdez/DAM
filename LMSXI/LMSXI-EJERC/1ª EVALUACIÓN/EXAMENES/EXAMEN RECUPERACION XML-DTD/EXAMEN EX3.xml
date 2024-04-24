@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE formula1 [
+<!ELEMENT formula1 (carreira)>
+<!ELEMENT carreira (nome, data, podium)>
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT data (dia, mes, ano)>
+<!ELEMENT dia (#PCDATA)>
+<!ELEMENT mes (#PCDATA)>
+<!ELEMENT ano (#PCDATA)>
+<!ELEMENT podium (orde*)>
+<!ELEMENT orde (EMPTY)>
+
+<!ATTLIST formula1 ano CDATA #REQUIRED>
+<!ATTLIST orde n ID #REQUIRED>
+<!ATTLIST orde nome CDATA #REQUIRED>
+<!ATTLIST orde nome CDATA #REQUIRED>
+<!ATTLIST orde escudería CDATA #IMPLIED>
+
+]>
+

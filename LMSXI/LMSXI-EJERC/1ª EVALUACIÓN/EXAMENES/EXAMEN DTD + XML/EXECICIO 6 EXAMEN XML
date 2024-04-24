@@ -1,0 +1,28 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno num = "N1">
+    <nome>Pepe</nome>
+    <apelidos>Alvarez Arias</apelidos>
+    <domicilio direccion = Calle Terra de Souto n8></domicilio>
+    <domicilio cidade = Rubiá></domicilio>
+    <domicilio provincia = Ourense></domicilio>
+    <domicilio nacionalidade = Española></domicilio>
+    <sexo>home</sexo>
+    <telefono dueño = pai|nai|propio></telefono>
+    <axuda axudante = "N2"/>
+    <comentario></comentario>
+    </alumno>
+
+    <alumno num = "N2">
+    <nome>Marina</nome>
+    <apelidos>Alvarez Cao</apelidos>
+        <domicilio direccion = Calle Terra de Souto n10></domicilio>
+        <domicilio cidade = Rubiá></domicilio>
+        <domicilio provincia = Ourense></domicilio>
+        <domicilio nacionalidade = Española></domicilio>
+    <sexo>muller</sexo>
+    <telefono dueño = pai|nai|propio></telefono>
+    <comentario></comentario>
+    </alumno>
+<alumnos>

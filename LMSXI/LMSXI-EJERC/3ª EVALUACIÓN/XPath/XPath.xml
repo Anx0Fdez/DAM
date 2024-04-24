@@ -1,0 +1,164 @@
+<universidade>
+    <nome>Universidade de Vichocuntín</nome>
+    <pais>Cerdedo</pais>
+    <!-- carreiraS -->
+    <carreiras>
+        <carreira id="c01">
+            <nome>I.T. Informática</nome>
+            <plan>2003</plan>
+            <creditos>250</creditos>
+            <centro>Escola de Informática</centro>
+        </carreira>
+        <carreira id="c02">
+            <nome>Dipl. Empresariales</nome>
+            <plan>2001</plan>
+            <creditos>275</creditos>
+            <centro>Facultade de Ciencias Sociais</centro>
+        </carreira>
+        <carreira id="c03">
+            <nome>Dipl. Relacións Laborais</nome>
+            <plan>2001</plan>
+            <creditos>280</creditos>
+            <centro>Facultade de Ciencias Sociais</centro>
+            <subdirector>Alfonso Martín Luque</subdirector>
+        </carreira>
+        <carreira id="c04">
+            <nome>Lic. Quimica</nome>
+            <plan>2003</plan>
+            <creditos>175</creditos>
+            <centro>Facultade de Ciencias Experimentais</centro>
+        </carreira>
+        <carreira id="c05">
+            <nome>Lic. Biología</nome>
+            <plan>2001</plan>
+            <creditos>175</creditos>
+            <centro>Facultade de Ciencias Experimentais</centro>
+        </carreira>
+        <carreira id="c06">
+            <nome>Lic. Humanidades</nome>
+            <plan>1980</plan>
+            <creditos>475</creditos>
+            <centro>Facultade de Humanidades</centro>
+        </carreira>
+    </carreiras>
+
+    <!-- ASIGNATURAS -->
+    <asignaturas>
+        <asignatura id="a01" titulacion="c01">
+            <nome>Ofimática</nome>
+            <creditos_teoricos>3</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+        <asignatura id="a02" titulacion="c01">
+            <nome>Inxeñería do Software</nome>
+            <creditos_teoricos>6</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+        <asignatura id="a03" titulacion="c02">
+            <nome>Administración de Empresas</nome>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+        <asignatura id="a04" titulacion="c02">
+            <nome>Dereito Internacional</nome>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+        <asignatura id="a05" titulacion="c04">
+            <nome>Pedagoxía</nome>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+        <asignatura id="a06" titulacion="c03">
+            <nome>Didáctica</nome>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>3</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+        <asignatura id="a07" titulacion="c04">
+            <nome>Tecnoloxía dlos Alimentos</nome>
+            <creditos_teoricos>1.5</creditos_teoricos>
+            <creditos_practicos>7.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+        <asignatura id="a08" titulacion="c01">
+            <nome>Bases de Datos</nome>
+            <creditos_teoricos>4.5</creditos_teoricos>
+            <creditos_practicos>5.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+        <asignatura id="a09" titulacion="c06">
+            <nome>Historia do Pensamento</nome>
+            <creditos_teoricos>6</creditos_teoricos>
+            <creditos_practicos>0</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+    </asignaturas>
+    <!-- ALUMNOS -->
+    <alumnos>
+        <alumno id="e01">
+            <apelido1>Rivas</apelido1>
+            <apelido2>Santos</apelido2>
+            <nome>Víctor Manuel</nome>
+            <sexo>Home</sexo>
+            <estudos>
+                <carreira codigo="c01"/>
+                <asignaturas>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a03"/>
+                    <asignatura codigo="a05"/>
+                    <asignatura codigo="a09"/>
+                </asignaturas>
+            </estudos>
+        </alumno>
+        <alumno id="e02">
+            <apelido1>Pérez</apelido1>
+            <apelido2>García</apelido2>
+            <nome>Luisa</nome>
+            <sexo>Muller</sexo>
+            <estudos>
+                <carreira codigo="c02"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                </asignaturas>
+                <proxecto>Web de IBM</proxecto>
+            </estudos>
+        </alumno>
+        <alumno id="e03" beca="si">
+            <apelido1>Pérez</apelido1>
+            <apelido2>Romero</apelido2>
+            <nome>Fernando</nome>
+            <sexo>Home</sexo>
+            <estudos>
+                <carreira codigo="c02"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a04"/>
+                    <asignatura codigo="a09"/>
+                </asignaturas>
+            </estudos>
+        </alumno>
+        <alumno id="e04">
+            <apelido1>Avalón</apelido1>
+            <apelido2>Jiménez</apelido2>
+            <nome>María</nome>
+            <sexo>Muller</sexo>
+            <estudos>
+                <carreira codigo="c01"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a07"/>
+                </asignaturas>
+                <proyecto>Estudio de Salinidade da Xunqueira do Lagares</proyecto>
+            </estudos>
+        </alumno>
+    </alumnos>
+</universidade>

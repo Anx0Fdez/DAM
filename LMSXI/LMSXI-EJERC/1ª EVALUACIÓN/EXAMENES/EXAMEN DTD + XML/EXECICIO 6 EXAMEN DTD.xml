@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<[!DOCKTIPE alumnos
+<!ELEMENT alumnos (alumno*)>
+<!ELEMENT alumno EMPTY>
+<!ELEMENT alumnos (nome, apelidos, sexo, telefono, axuda, domicilio*)
+
+<!ELEMENT nome #PCDATA>
+<!ELEMENT apelidos #PCDATA>
+<!ELEMENT sexo #PCDATA>
+<!ELEMENT telefono ANY>
+<!ELEMENT mes #PCDATA>
+<!ELEMENT axuda ID>
+<!ELEMENT domicilio EMPTY>
+<!ELEMENT comentario ANY>
+
+<!ATTLIST direccion CDATA #IMPLIED>
+<!ATTLIST cidade CDATA #IMPLIED>
+<!ATTLIST provincia CDATA #IMPLIED>
+<!ATTLIST nacionalidade CDATA #IMPLIED>
+
+<!ATTLIST axudante
+]>
+
+
+
+
+
+
+
+
+
+
+
+

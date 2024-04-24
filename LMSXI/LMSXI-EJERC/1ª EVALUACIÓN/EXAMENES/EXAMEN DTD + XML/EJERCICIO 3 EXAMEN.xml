@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<[!DOCKTIPE nba
+<!ELEMENT nba (ligaregular*)>
+<!ELEMENT ligaregular EMPTY>
+<!ELEMENT ligaregular (data, podium)>
+<!ELEMENT data EMPTY>
+<!ELEMENT podium EMPTY>
+<!ELEMENT data (dia, mes. ano)>
+<!ELEMENT dia ANY>
+<!ELEMENT mes #PCDATA>
+<!ELEMENT ano ANY>
+<!ELEMENT podium (orden*)>
+<!ELEMENT podium EMPTY>
+<!ELEMENT orden EMPTY>
+
+<!ATTLIST n ID #IMPLIED>
+<!ATTLIST nome CDATA #IMPLIED>
+<!ATTLIST equipo CDATA #IMPLIED>
+
+]>

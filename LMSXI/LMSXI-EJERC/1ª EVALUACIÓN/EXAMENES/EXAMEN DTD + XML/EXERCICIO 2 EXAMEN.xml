@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<poblacion>
+    <persoas>
+        <persoa nome="Ryan Adams"/>
+        ryan.adams@disquitos.org
+    </persoas>
+    <persoas>
+        <nome>Jeff Tweedy</nome>
+        <telfonofix>123456789</telfonofix>
+    </persoas>
+</poblacion>

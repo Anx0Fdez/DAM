@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos>
+    <equipo>
+        <nome>Real Madrid</nome>
+        <cidade>Madrid</cidade>
+        <entrenador>Pedro Pi</entrenador>
+    </equipo>
+
+    <equipo>
+        <nome>Celta de Vigo</nome>
+        <cidade>Vigo</cidade>
+        <entrenador>Angel Errera</entrenador>
+    </equipo>
+</equipos>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<axenda>
+    <persoa id = "P1" sexo = "binario|non binario">
+        <nome>Jose</nome>
+        <email>jose@gmail.com</email>
+        <relacion/>
+    </persoa>
+
+
+
+
+</axenda>
