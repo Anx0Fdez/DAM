@@ -1,0 +1,167 @@
+/* Estilos generales del cuerpo del documento */
+body {
+    background-color: #8d9494b6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos específicos para la página de curriculum */
+body.curriculum {
+    background-color: white;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 70px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e7e5e6;
+    overflow: hidden;
+}
+
+/* Estilos del encabezado */
+header img {
+    width: 100%;
+    height: 100px;
+}
+
+header nav {
+    background: #333;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    overflow: hidden;
+}
+
+header nav ul li {
+    list-style-type: none;
+    float: left;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav ul li a:hover {
+    background: #ad320c;
+}
+
+header nav ul li a:active {
+    background: #4d0806;
+}
+
+/* Estilos de la barra lateral */
+aside {
+    margin-right: 20px;
+    text-align: right;
+    margin-top: 50px;
+    padding-bottom: 10px;
+}
+
+/* Estilos del resumen */
+.summary {
+    margin-bottom: 80px;
+}
+
+.summary h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+.summary h1 {
+    margin-top: -10px;
+    padding-bottom: 40px;
+}
+
+.summary img {
+    border: 1px solid black;
+    margin-left: 80px;
+    max-height: 240px;
+}
+
+/* Estilos de los detalles */
+.details h2 {
+    color: #3a3636;
+}
+
+.details h3 {
+    color: gray;
+}
+
+.experiencia {
+    padding-top: 5px;
+}
+
+.details ul {
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.details li {
+    padding: 3px;
+}
+
+/* Estilos de los datos personales */
+.datos p {
+    font-size: 0.75em;
+    color: grey;
+}
+
+.datos a {
+    color: rgb(0, 94, 255);
+}
+
+/* Estilos de las redes sociales */
+.sociales img {
+    max-height: 25px;
+    border: unset;
+    margin: 0%;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos del nombre */
+#nombre {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilos de la foto del CV */
+#fotocv {
+    float: right;
+    background-color: white;
+}
+
+/* Estilos de la sección de experiencia */
+.experiencia {
+    float: left;
+    width: 50%;
+}
+
+/* Estilos de la sección de la derecha */
+.derecha {
+    float: right;
+    width: 45%;
+}
+
+/* Estilos de la línea horizontal */
+hr {
+    position: absolute;
+    margin-bottom: -10%;
+}

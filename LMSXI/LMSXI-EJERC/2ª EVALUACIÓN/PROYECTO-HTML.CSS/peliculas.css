@@ -1,0 +1,256 @@
+/* Establecer la propiedad box-sizing para todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Establecer la fuente, margen y relleno para el body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: rgb(53, 53, 53);
+}
+
+/* Estilo del logo */
+.logo {
+    background-color: rgb(53, 53, 53);
+    margin-top: -10%;
+    margin-left: -5%;
+    padding-top: 8%;
+}
+
+/* Estilo de la tabla */
+table {
+    position: absolute;
+    color: rgb(180, 180, 180);
+    transform: translateX(1.5%);
+    top: 15%;
+    background-color: rgba(53, 53, 53, 0.589);
+    border-radius: 1%;
+    text-align: center;
+    border: 5px ridge #f1750f;
+    border-radius: 2%;
+}
+
+/* Estilo del fondo */
+.fondo {
+    width: 100%;
+    height: 210vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    text-align: center;
+    padding: 1% 0 0.01% 0;
+    margin-top: -1%;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo del elemento #pelis */
+#pelis {
+    color: #c5c5c5 ;
+}
+
+/* Estilo de la barra de navegación */
+.navegador {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Estilo del índice */
+.indice {
+    margin-right: 3%;
+    padding-top: 1.5%;
+}
+
+/* Estilo del índice2 */
+.indice2 {
+    margin-top: 1.5%;
+}
+
+/* Estilo del título */
+.title {
+    padding-left: 2.5%;
+}
+
+/* Estilo de menosBorde */
+.menosBorde {
+    padding-top: 0.35%;
+}
+
+/* Estilo de red */
+.red {
+    display: flex;
+    justify-content: center;
+    margin: 0% 2% 0% 2%;
+}
+
+/* Estilo de redes */
+.redes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo del contenido desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4a261;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Estilo de los enlaces del contenido desplegable */
+.dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Estilo de los enlaces del contenido desplegable al pasar el cursor */
+.dropdown-content a:hover {
+    background-color: #dda05a;
+}
+
+/* Ocultar la entrada de checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo de la etiqueta */
+label {
+    color: #f1750f;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Mostrar el contenido desplegable cuando el checkbox está marcado */
+input[type="checkbox"]:checked ~ .dropdown-content {
+    display: block;
+}
+
+/* Estilo de los enlaces */
+a {
+    color: #f1750f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo de los enlaces al pasar el cursor */
+a:hover {
+    color: #c25700;
+    text-decoration: underline;
+}
+
+/* Estilo de las celdas de la tabla y del título */
+td, .title {
+    border-top: 5px ridge #f1750f;
+    padding: 2px 12px 2px 12px;
+}
+
+/* Estilo de los elementos con IDs */
+#title, #resume, #data, #trailer {
+    padding: 20px 0 20px 0;
+}
+
+/* Estilo de los elementos con IDs específicos */
+#title {
+    width: 250px;
+}
+
+#resume {
+    width: 370px;
+}
+
+#data {
+    width: 270px;
+}
+
+#img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del menú */
+#menu {
+    margin-top: 1.5%;
+    margin-right: 2.5%;
+}
+
+/* Estilo del menú al pasar el cursor */
+#menu:hover {
+    color: #c25700;
+    text-decoration: underline;
+}
+
+/* Duplicar el estilo para .logo */
+.logo {
+    background-color: rgb(53, 53, 53);
+    margin-top: -10%;
+    margin-left: -5%;
+    padding-top: 8%;
+}
+
+/* Duplicar el estilo para .navegador .dropdown-content */
+.navegador .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4a261;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Duplicar el estilo para .navegador .dropdown-content a */
+.navegador .dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Duplicar el estilo para .navegador .dropdown-content a al pasar el cursor */
+.navegador .dropdown-content a:hover {
+    background-color: #dda05a;
+}
+
+/* Duplicar el estilo para .navegador input[type="checkbox"] */
+.navegador input[type="checkbox"] {
+    display: none;
+}
+
+/* Duplicar el estilo para .navegador label */
+.navegador label {
+    color: #f1750f;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Mostrar el contenido desplegable cuando el checkbox está marcado en la barra de navegación */
+.navegador input[type="checkbox"]:checked ~ .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Crunchyroll</title>
+    <link rel="stylesheet" type="text/css" href="inicio.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="IMG\Crunchyroll_Logo.png">
+</head>
+
+
+<body>
+    <header>
+        <ul class="navegador">
+            <li class="indice"><a href="inicio.html"><img class="logo" src="IMG\imagotipo.png" alt="logo"
+                        width="20%"></a></li>
+            <li class="indice"><a href="">Novedades</a></li>
+            <li class="indice"><a href="series.html">Series</a></li>
+            <li id="menu">
+                <input type="checkbox" id="dropdown-checkbox">
+                <label for="dropdown-checkbox">Películas</label>
+                <div class="dropdown-content">
+                    <a href="peliculas.html#1">DragonBall Super Broly</a>
+                    <a href="peliculas.html#2">El Castillo Ambulante</a>
+                    <a href="peliculas.html#3">Your Name</a>
+                    <a href="peliculas.html#4">One Piece Film Red</a>
+                </div>
+            </li>
+            <li class="indice"><a href="juegos.html">Juegos</a></li>
+            <li class="indice"><a href="sobreMi.html">Sobre mi</a></li>
+        </ul>
+    </header>
+    </div>
+    <div class="container">
+        <img class="fondo" src="IMG\adrien-olichon-ilVYjf0J378-unsplash.jpg" alt="fondo">
+        <div>
+            <img src="IMG\mejores-anime-largos.jpg" class="imgPortada">
+            <p class="textoImg">CLÁSICOS</p>
+            <p class="textoImg2">DEL ANIME</p>
+            <p class="descripcionImg">Los animes mas vistos de la última década.</p>
+        </div>
+        <aside>
+            <div class="formulario">
+                <h1>Crear Cuenta</h1>
+                <img class="gato" src="IMG\register-yuzu.png">
+
+                <form action="/submit_signup" method="post">
+                    <label for="correo_electronico">Usuario</label>
+                    <input type="text" id="correo_electronico" name="email" required>
+
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="password" minlength="6" required>
+                    <p>Utiliza al menos 6 caracteres, sin espacios en blanco.</p>
+
+                    <label class="letra">
+                        <input type="checkbox" id="boletin" name="newsletter">
+                        Quiero conocer todas las últimas noticias, información y ofertas de Crunchyroll.
+                    </label>
+                    <div class="CrearCuenta">
+                        <input type="submit" value="CREAR CUENTA">
+                    </div>
+                </form>
+                <p>
+                    Al crear una cuenta, aceptas nuestros
+                    <a href="/terms_of_use" target="_blank">Términos de Uso</a> y
+                    <a href="/privacy_policy" target="_blank">Política de Privacidad</a>,
+                    confirmando además que tienes 16 años o más.
+                </p>
+                <p>¿Ya tienes una cuenta? <a href="/login">INICIAR SESIÓN</a></p>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <ul class="redes">
+            <li class="red"><a href="https://www.facebook.com/Crunchyroll.es/">Facebook</a></li>
+            <li class="red"> | </li>
+            <li class="red"><a href="https://twitter.com/Crunchyroll_es">Twitter</a></li>
+            <li class="red"> | </li>
+            <li class="red"><a href="https://www.instagram.com/crunchyroll_es/">Instagram</a></li>
+        </ul>
+        <p class="copyright">&copy; Crunchyroll</p>
+
+    </footer>
+</body>
+
+</html>

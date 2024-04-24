@@ -1,0 +1,262 @@
+/* Estilos globales */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el elemento #series */
+#series {
+    color: #c5c5c5;
+}
+
+/* Estilos para la clase .navegador */
+.navegador {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Estilos para la clase .indice */
+.indice {
+    margin-right: 3%;
+    padding-top: 1.5%;
+}
+
+/* Estilos para la clase .indice2 */
+.indice2 {
+    margin-top: 1.5%;
+}
+
+/* Estilos para la clase .logo */
+.logo {
+    background-color: rgb(53, 53, 53);
+    margin-top: -10%;
+    margin-left: -5%;
+    padding-top: 8%;
+}
+
+/* Estilos para el elemento header */
+header {
+    background-color: rgb(53, 53, 53);
+}
+
+/* Estilos para el elemento table */
+table {
+    position: absolute;
+    color: rgb(180, 180, 180);
+    transform: translateX(1.5%);
+    top: 15%;
+    background-color: rgba(53, 53, 53, 0.589);
+    border-radius: 1%;
+    text-align: center;
+    border: 5px ridge #f1750f;
+    border-radius: 2%;
+}
+
+/* Estilos para los elementos anchor */
+a {
+    color: #f1750f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos para los elementos anchor al pasar el cursor por encima */
+a:hover {
+    color: #c25700;
+    text-decoration: underline;
+}
+
+/* Estilos para la clase .fondo */
+.fondo {
+    width: 100%;
+    height: 210vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilos para los elementos td y .title */
+td,
+.title {
+    border-top: 5px ridge #f1750f;
+    padding: 2px 12px 2px 12px;
+}
+
+/* Estilos para los elementos #title, #resume, #data y #trailer */
+#title,
+#resume,
+#data,
+#trailer {
+    padding: 20px 0 20px 0;
+}
+
+/* Estilos para el elemento #title */
+#title {
+    width: 250px;
+}
+
+/* Estilos para la clase .title */
+.title {
+    padding-left: 2.5%;
+}
+
+/* Estilos para el elemento #resume */
+#resume {
+    width: 370px;
+}
+
+/* Estilos para el elemento #data */
+#data {
+    width: 270px;
+}
+
+/* Estilos para la clase .menosBorde */
+.menosBorde {
+    padding-top: 0.35%;
+}
+
+/* Estilos para el elemento #img */
+#img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para el elemento footer */
+footer {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    text-align: center;
+    padding: 1% 0 0.01% 0;
+    margin-top: -1%;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para la clase .red */
+.red {
+    display: flex;
+    justify-content: center;
+    margin: 0% 2% 0% 2%;
+}
+
+/* Estilos para la clase .redes */
+.redes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para la clase .copyright */
+.copyright {
+    padding-left: 2.5%;
+    font-size: 15px;
+    padding-bottom: 0%;
+}
+
+/* Estilos para el elemento #foto1 */
+#foto1 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Estilos para el elemento #foto1 al pasar el cursor por encima */
+#foto1:hover {
+    filter: blur(5px);
+}
+
+/* Estilos para el elemento #foto2 */
+#foto2 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Estilos para el elemento #foto2 al pasar el cursor por encima */
+#foto2:hover {
+    filter: grayscale(80%);
+}
+
+/* Estilos para el elemento #foto3 */
+#foto3 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Estilos para el elemento #foto3 al pasar el cursor por encima */
+#foto3:hover {
+    filter: saturate(250%);
+}
+
+/* Estilos para el elemento #foto4 */
+#foto4 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Estilos para el elemento #foto4 al pasar el cursor por encima */
+#foto4:hover {
+    opacity: 0.5;
+}
+
+/* Estilos para el elemento #menu */
+#menu {
+    margin-top: 1.5%;
+    margin-right: 2.5%;
+}
+
+/* Estilos para la clase .navegador .dropdown-content */
+.navegador .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4a261;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilos para la clase .navegador .dropdown-content a */
+.navegador .dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Estilos para la clase .navegador .dropdown-content a al pasar el cursor por encima */
+.navegador .dropdown-content a:hover {
+    background-color: #dda05a;
+}
+
+/* Estilos para la clase .navegador input[type="checkbox"] */
+.navegador input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilos para la clase .navegador label */
+.navegador label {
+    color: #f1750f;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Estilos para la clase .navegador input[type="checkbox"]:checked ~ .dropdown-content */
+.navegador input[type="checkbox"]:checked ~ .dropdown-content {
+    display: block;
+}
+
+/* Estilos para el elemento #menu al pasar el cursor por encima */
+#menu:hover {
+    color: #c25700;
+    text-decoration: underline;
+}

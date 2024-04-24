@@ -1,0 +1,263 @@
+/* Establece la propiedad box-sizing en border-box para todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Establece la familia de fuentes, margen y relleno para el body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza el encabezado con un color de fondo */
+header {
+    background-color: rgb(53, 53, 53);
+}
+
+/* Estiliza el logo con un color de fondo y márgenes */
+.logo {
+    background-color: rgb(53, 53, 53);
+    margin-top: -10%;
+    margin-left: -5%;
+    padding-top: 8%;
+}
+
+/* Estiliza la tabla con posicionamiento, colores y bordes */
+table {
+    position: absolute;
+    color: rgb(180, 180, 180);
+    transform: translateX(1.5%);
+    top: 15%;
+    background-color: rgba(53, 53, 53, 0.589);
+    border-radius: 1%;
+    text-align: center;
+    border: 5px ridge #f1750f;
+    border-radius: 2%;
+}
+
+/* Estiliza los enlaces con color, decoración de texto y peso de fuente */
+a {
+    color: #f1750f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estiliza los enlaces al pasar el cursor con un color y subrayado diferente */
+a:hover {
+    color: #c25700;
+    text-decoration: underline;
+}
+
+/* Estiliza la imagen de fondo con ancho, alto y posicionamiento */
+.fondo {
+    width: 100%;
+    height: 210vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estiliza las celdas de la tabla y el título con bordes y relleno */
+td, .title {
+    border-top: 5px ridge #f1750f;
+    padding: 2px 12px 2px 12px;
+}
+
+/* Estiliza elementos específicos con relleno */
+#title, #resume, #data, #trailer {
+    padding: 20px 0 20px 0;
+}
+
+/* Estiliza el título con un ancho específico */
+#title {
+    width: 250px;
+}
+
+/* Estiliza el título con relleno izquierdo */
+.title {
+    padding-left: 2.5%;
+}
+
+/* Estiliza el resumen con un ancho específico */
+#resume {
+    width: 370px;
+}
+
+/* Estiliza los datos con un ancho específico */
+#data {
+    width: 270px;
+}
+
+/* Estiliza la clase menosBorde con relleno superior */
+.menosBorde {
+    padding-top: 0.35%;
+}
+
+/* Estiliza la imagen con ancho y alto */
+#img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estiliza el pie de página con color de fondo, color de texto y relleno */
+footer {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    text-align: center;
+    padding: 1% 0 0.01% 0;
+    margin-top: -1%;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estiliza la clase red con flexbox y márgenes */
+.red {
+    display: flex;
+    justify-content: center;
+    margin: 0% 2% 0% 2%;
+}
+
+/* Estiliza la clase redes con flexbox y justificación */
+.redes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estiliza la clase navegador con list-style, márgenes, relleno, flexbox y ancho */
+.navegador {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Estiliza la clase indice con margen derecho y relleno superior */
+.indice {
+    margin-right: 3%;
+    padding-top: 1.5%;
+}
+
+/* Estiliza la clase indice2 con margen superior */
+.indice2 {
+    margin-top: 1.5%;
+}
+
+/* Estiliza la clase dropdown-content con display, posición, color de fondo, ancho, sombra y z-index */
+.navegador .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4a261;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Estiliza los enlaces de dropdown-content con color, relleno, decoración de texto y display */
+.navegador .dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Estiliza los enlaces de dropdown-content al pasar el cursor con un color de fondo diferente */
+.navegador .dropdown-content a:hover {
+    background-color: #dda05a;
+}
+
+/* Oculta la entrada de checkbox */
+.navegador input[type="checkbox"] {
+    display: none;
+}
+
+/* Estiliza la etiqueta con color, relleno, tamaño de fuente, borde, cursor y peso de fuente */
+.navegador label {
+    color: #f1750f;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Muestra el dropdown-content cuando el checkbox está marcado */
+.navegador input[type="checkbox"]:checked ~ .dropdown-content {
+    display: block;
+}
+
+/* Estiliza el menú con márgenes superior y derecho */
+#menu {
+    margin-top: 1.5%;
+    margin-right: 2.5%;
+}
+
+/* Estiliza el menú al pasar el cursor con un color y subrayado diferente */
+#menu:hover {
+    color: #c25700;
+    text-decoration: underline;
+}
+
+/* Estiliza el elemento juegos con un color específico */
+#juegos {
+    color: #c5c5c5;
+}
+
+/* Estiliza el elemento juego1 con una altura, ancho y desbordamiento específicos */
+#juego1 {
+    height: 315px;
+    width: 560px;
+    overflow: hidden;
+}
+
+/* Escala el elemento juego1 al pasar el cursor */
+#juego1:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+/* Estiliza el elemento juego2 con una altura, ancho y transición específicos */
+#juego2 {
+    height: 315px;
+    width: 560px;
+    transition: -webkit-transform 1s ease;
+}
+
+/* Rota el elemento juego2 al pasar el cursor */
+#juego2:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* Estiliza el elemento juego3 con una altura y ancho específicos */
+#juego3 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Rota el elemento juego3 al pasar el cursor */
+#juego3:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+/* Estiliza el elemento juego4 con una altura y ancho específicos */
+#juego4 {
+    height: 315px;
+    width: 560px;
+}
+
+/* Aplica un radio de borde y sombra al elemento juego4 al pasar el cursor */
+#juego4:hover {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #ec731e;
+    -webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
