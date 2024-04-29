@@ -10,6 +10,7 @@ Gestión de permisos en PostgreSQL. Es importante tener en cuenta que en Postgre
 ```sql
 sudo pluma /etc/postgresql/13/main/pg_hba.conf -- Editar archivo de configuración
 sudo systemctl reload postgresql -- Reiniciar 
+pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
 ```
 ```sql
 select user; -- Ver usuario actual
@@ -25,6 +26,7 @@ psql dam a -- Conectarse a una base de datos con usario a
 \z -- Ver permisos de usuarios en vistas y tablas
 \dt a.* -- Ver tablas de otro usuario
 show search_path; -- Ver en que esquemas por defecto el sistema va a buscar las tablas
+CcT -> C: Create Schemas | c: connect
 ```
 ```sql
 create database dam; -- Crear base de datos
@@ -32,6 +34,7 @@ create user a with password 'a'; -- Crear usuario
 ```
 #### *CREAR Y ADMINISTRAR ESQUEMAS*
 ```sql
+UC -> U: Usage | C: Create tables
 1.01 create schema a authorization a; -- Crear esquema
 1.02 drop schema a; -- Eliminar esquema
 
@@ -49,10 +52,10 @@ insert into t1 values (1); -- Insertar valores
 ```
 #### *CREAR Y ADMINISTRAR PERMISOS*
 ```sql
-a -- Añaadir
-r -- Quitar
-w -- Escribir
-d -- Borrar
+a -- Añadir (insert)
+r -- Leer (select)
+w -- Escribir (update)
+d -- Borrar (delete)
 
 VER PERMISOS DE UN USUARIO [SELECT]
 select * from information_schema.table_privileges where grantee = 'u3'; -- Ver permisos de un usuario
@@ -73,7 +76,10 @@ QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
 -- Debes estar conectado con el usuario a ("psql dam a")
 -> revoke insert on t4 from b; -- Quitar permisos a b en la tabla t4
 -> revoke insert on t4 from b cascade; -- Quitar permisos a b en la tabla t4 y a los objetos que dependen de ella
+-> revoke all on t4 from b; -- Quitar todos los permisos a b en la tabla t4
+-> revoke connect on database dam from b; -- Quitar permisos a b en la base de datos dam
 ```
+
 #### *VISTAS*
 ```sql
 -- Una vista es una tabla virtual que se crea a partir de una consulta
@@ -82,7 +88,13 @@ QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
 2. select * from v; -- Ver vista
 3. drop view v; -- Eliminar vista
 ```
-
+### ***<u>ROLES</u>***
+```sql
+create role readonly; -- Crear rol
+grant connect on database dam to readonly; -- Dar permisos a un rol
+grant insert on es3.xogador to readonly; -- Dar permisos a un rol
+grant readonly to u4; -- Dar rol a un usuario
+```
 ### ***[ERRORES FRECUENTES]***
 ```sql
 -- Errores frecuentes en PostgreSQL
