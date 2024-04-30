@@ -10,7 +10,18 @@ Gestión de permisos en PostgreSQL. Es importante tener en cuenta que en Postgre
 ```sql
 sudo pluma /etc/postgresql/13/main/pg_hba.conf -- Editar archivo de configuración
 sudo systemctl reload postgresql -- Reiniciar 
-pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
+
+-- EXPORTAR E IMPORTAR BASE DE DATOS
+-> pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
+    ->> \i f2.dump -- Importar base de datos desde un fichero llamado `f2.dump`
+-> pg_dump -U postgres -Fc futbol2 > f2c.dump -- Exportar base de datos a un fichero comprimido llamado `f2c.dump`
+    ->> pg_restore -U postgres -C -d postgres f2c.dump -- Importar base de datos desde un fichero comprimido llamado `f2c.dump`
+
+-- PLANTILLAS
+- createdb -U postgres -T template0 futbolrestaurada -- Crear base de datos a partir de una plantilla
+- pg_restore -U postgres -d futbolrestaurada f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
+
+pg_dump -U postgres --table='fu.x*' -Fp futbol2 > fup.dump -- Exportar tablas que empiecen por 'fu.x' a un fichero llamado `f2.dump`
 ```
 ```sql
 select user; -- Ver usuario actual
@@ -30,6 +41,8 @@ CcT -> C: Create Schemas | c: connect
 ```
 ```sql
 create database dam; -- Crear base de datos
+dropdb -U postgres futbol2 -- Eliminar base de datos
+
 create user a with password 'a'; -- Crear usuario
 ```
 #### *CREAR Y ADMINISTRAR ESQUEMAS*
@@ -47,6 +60,8 @@ alter schema es4 owner to u4; -- Cambiar el propietario de un esquema
 crete table t1 (a int); -- Crear tabla
 select * from pg_tables where tableowner='u3'; -- Ver tablas de un usuario
 select * from a.t1; -- Ver tabla
+delete from t1; -- Eliminar contenido de la tabla
+drop table t1; -- Eliminar tabla entera
 
 insert into t1 values (1); -- Insertar valores
 ```
@@ -104,4 +119,5 @@ ERROR: permission denied for database dam -- No tienes permisos para ver la base
 ERROR:  null value in column "codx" of relation "xogador" violates not-null constraint -- No exiate la clave primaria en la vista
 ERROR: cannot insert into v2 values('x41', 'luis', 'e9', 'laso'); -- No se puede insertar en una vista con dos tablas
 ```
+
 
