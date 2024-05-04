@@ -332,3 +332,5 @@ Este documento contiene una lista de comandos de Linux útiles para administrar 
 
 - **Descripción**: Permite ejecutar procesos sin bloquear la terminal.
 - **Ejemplo**: `command &` ejecuta `command` en segundo plano.
+
+
