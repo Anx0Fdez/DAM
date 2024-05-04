@@ -47,7 +47,7 @@ En esta sección encontrarás información sobre las tecnologías que se imparte
 En esta sección encontrarás información sobre los lenguajes de marcas que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. A continuación, se muestra una lista de los lenguajes de marcas disponibles:
 
 - ### <u>***HTML***</u>
-    - [*<u>HTML Básico</u>*](COD/HTML.md)
+    - [*<u>HTML Básico</u>*](LMSXI/HTML.md)
 - ### <u>***CSS***</u>
     - [*<u>CSS Básico</u>*](COD/HTML.md)
 - [**XML**](XML.md)
