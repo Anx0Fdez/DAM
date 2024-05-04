@@ -26,8 +26,11 @@ En esta sección encontrarás información sobre los lenguajes de programación 
     - [*<u>Java 2ªEvaluación</u>*](PROGRAMACION/JAVA-2EVA.md)
     - [*<u>Java 3ªEvaluación</u>*](PROGRAMACION/JAVA-3EVA.md)
     
-- ### <u>***Bash***</u>
-    - [*<u>Comandos Principales</u>*](SI/Bash.md)
+- ### <u>***Manejo de Terminal***</u>
+    - [*<u>Comandos CMD</u>*](SI/Cmd.md)
+    - [*<u>Comandos BASH</u>*](SI/Bash.md)
+
+    
 
 ## <u>**Tecnologías**</u>
 En esta sección encontrarás información sobre las tecnologías que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. A continuación, se muestra una lista de las tecnologías disponibles:
@@ -46,7 +49,8 @@ En esta sección encontrarás información sobre los lenguajes de marcas que se 
 - ### <u>***HTML***</u>
     - [*<u>HTML Básico</u>*](COD/HTML.md)
 - ### <u>***CSS***</u>
-    - [*<u>CSS Básico</u>*](COD/HTML.md)- [**XML**](XML.md)
+    - [*<u>CSS Básico</u>*](COD/HTML.md)
+- [**XML**](XML.md)
 - [**Markdown**](MARKDOWN.md)
 - [**JSON**](JSON.md)
 - [**Xpath**](XPATH.md)
