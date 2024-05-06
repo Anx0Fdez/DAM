@@ -53,7 +53,7 @@ En esta sección encontrarás información sobre los lenguajes de marcas que se 
 - [**XML**](XML.md)
 - [**Markdown**](MARKDOWN.md)
 - [**JSON**](JSON.md)
-- [**Xpath**](XPATH.md)
+- [**XPath**](XPATH.md)
 - [**Xquery**](XQUERY.md)
 
 

@@ -8,334 +8,495 @@
 
 Este documento contiene una lista de comandos de Linux útiles para administrar usuarios, archivos, procesos y más. Los comandos se dividen en categorías para facilitar su uso y comprensión.
 
-### INDICE
-  - [Comandos Generales](#comandos-generales)
-  - [Gestión de Archivos y Directorios](#gestión-de-archivos-y-directorios)
-  - [Permisos y Enlaces](#permisos-y-enlaces)
-  - [Documentación y Ayuda](#documentación-y-ayuda)
-  - [Gestión de usuarios](#gestión-de-usuarios)
-  - [Gestión de procesos](#gestión-de-procesos)
+### ÍNDICE
+  - [Comandos Xerais](#comandos-xerais)
+  - [Xestión de Ficheiros e Directorios](#xestión-de-ficheiros-e-directorios)
+  - [Permisos e Enlaces](#permisos-e-enlaces)
+  - [Documentación e Axuda](#documentación-e-axuda)
+  - [Xestión de usuarios](#xestión-de-usuarios)
+  - [Xestión de procesos](#xestión-de-procesos)
   - [Utilidades de Monitorización](#utilidades-de-monitorización)
-  - [Gestión de la Prioridad de Procesos](#gestión-de-la-prioridad-de-procesos)
-  - [Información del Sistema](#información-del-sistema)
-  - [Gestión de Tareas Programadas](#gestión-de-tareas-programadas)
-  - [Uso de Señales](#uso-de-señales)
-  - [Ejecución en Segundo Plano](#ejecución-en-segundo-plano)
+  - [Xestión da Prioridade de Procesos](#xestión-da-prioridade-de-procesos)
+  - [Información do Sistema](#información-do-sistema)
+  - [Xestión de Tarefas Programadas](#xestión-de-tarefas-programadas)
+  - [Uso de Sinais](#uso-de-sinais)
+  - [Execución en Segundo Plano](#execución-en-segundo-plano)
 ---
 
-## Comandos Generales
-#### `passwd`
-- **Descripción**: Permite al usuario cambiar o asignar una contraseña.
-- **Ejemplo**: `passwd usuario`
-- **Opciones**:
-    - Sin opciones especiales.
+## Comandos Xerais
 
 #### `uname`
-- **Descripción**: Obtiene el nombre del sistema operativo.
-- **Ejemplo**: `uname -a`
-- **Opciones**:
-    - `-X` para información extendida (dependiendo del sistema).
+- **Descrición**: Obtén o nome do sistema operativo.
+- **Exemplo**: `uname -a`
+- **Opcións**:
+    - `-X` para información extendida (dependendo do sistema).
+    - `-a` para mostrar toda a información.
+    - `-r` para mostrar a versión do kernel.
 
 #### `logname`
-- **Descripción**: Muestra el nombre de usuario con el que se ha iniciado sesión.
-- **Ejemplo**: `logname`
-- **Opciones**:
-    - Sin opciones adicionales.
+- **Descrición**: Amosa o nome de usuario co que se iniciou a sesión.
+- **Exemplo**: `logname`
+- **Opcións**:
+    - Sen opcións adicionais.
 
 #### `id`
-- **Descripción**: Muestra el UID y GID del usuario.
-- **Ejemlo**: `id`
-- **Opciones**:
-    - Sin opciones adicionales.
+- **Descrición**: Amosa o UID e GID do usuario.
+- **Exemplo**: `id`
+- **Opcións**:
+    - `-u` para amosar só o UID.
+    - `-g` para amosar só o GID.
+    - `-G` para amosar os grupos aos que pertence o usuario.
+    - `-n` para amosar nomes de usuario e grupo en lugar de números.
+    - `-r` para amosar o nome real e efectivo do usuario.
+    - `-Z` para amosar o contexto de seguridade do usuario.
+    - `-a` para amosar todos os valores.
+    - `-F` para amosar todos os valores en formato JSON.
+  - **Nota**: O UID é o identificador único do usuario e o GID é o identificador único do grupo.
+- **Exemplo**: `id -u` | `id -g` | `id -G` | `id -n` | `id -r` | `id -Z` | `id -a` | `id -F`
 
 #### `date`
-- **Descripción**: Muestra o establece la fecha y hora del sistema.
-- **Ejemplo**: `date`
-- **Opciones**:
-    - `+formato` para mostrar la fecha en un formato específico.
+- **Descrición**: Amosa ou establece a data e hora do sistema.
+- **Exemplo**: `date`
+- **Opcións**:
+    - `+formato` para amosar a data nun formato específico.
 
 #### `who`
-- **Descripción**: Muestra quién está conectado al sistema.
-- **Ejemplo**: `who`
-- **Opciones**:
-    - `-H` para incluir cabeceras.
-    - `-u` para mostrar información detallada.
-    - `-q` para mostrar solo los nombres y el total de usuarios.
+- **Descrición**: Amosa quen está conectado ao sistema.
+- **Exemplo**: `who`
+- **Opcións**:
+    - `-H` para incluír cabeceiras.
+    - `-u` para amosar información detallada.
+    - `-q` para amosar só os nomes e o total de usuarios.
 
-## Gestión de Archivos y Directorios
+#### `mount`
+- **Descrición**: Amosa os sistemas de ficheiros montados.
+- **Exemplo**: `mount`
+- **Opcións**:
+  - `-t tipo` para amosar só sistemas de ficheiros dun tipo específico.
+  - `-l` para amosar só os sistemas de ficheiros montados.
+  - `-a` para montar todos os sistemas de ficheiros especificados en `/etc/fstab`.
 
-#### `pwd`
-- **Descripción**: Muestra el directorio actual de trabajo.
-- **Ejemplo**: `pwd`
-- **Opciones**:
-    - Sin opciones adicionales.
-
-#### `ls`
-- **Descripción**: Lista el contenido de un directorio.
-- **Ejemplo**: `ls`
-- **Opciones**:
-    - `-l` para formato detallado.
-    - `-A` para incluir archivos ocultos.
-    - `-R` para listado recursivo.
-
-#### `cd`
-- **Descripción**: Cambia el directorio actual.
-- **Ejemplo**: `cd directorio`
-- **Opciones**:
-    - Sin argumentos vuelve al directorio home.
-
-#### `cat`
-- **Descripción**: Muestra el contenido de un archivo.
-- **Ejemplo**: `cat archivo`
-- **Opciones**:
-    - Sin opciones adicionales.
-
-#### `touch`
-- **Descripción**: Crea un archivo vacío o actualiza el tiempo de acceso y modificación de un archivo existente.
-- **Ejemplo**: `touch archivo` | `touch -t 202401010000 archivo`
-- **Opciones**:
-    - `-t` para cambiar la fecha de creación de un archivo previamente creado
-
-#### `mkdir`
-- **Descripción**: Crea directorios.
-- **Ejemplo**: `mkdir directorio`
-- **Opciones**:
-    - `-p` para crear directorios padres necesarios.
-    - `-m` para especificar permisos.
-
-#### `rmdir`
-- **Descripción**: Elimina directorios vacíos.
-- **Ejemplo**: `rmdir directorio`
-- **Opciones**:
-    - `-p` para eliminar directorios padres si también están vacíos.
-
-#### `mv`
-- **Descripción**: Mueve o renombra archivos o directorios.
-- **Ejemplo**: `mv origen destino`
-- **Opciones**:
-    - `-i` para preguntar antes de sobrescribir.
-
-#### `cp`
-- **Descripción**: Copia archivos o directorios.
-- **Ejemplo**: `cp origen destino`
-- **Opciones**:
-    - `-i` para preguntar antes de sobrescribir.
-    - `-R` para copiar directorios de manera recursiva.
-    - `-p` para preservar el tiempo de modificación, acceso y permisos.
-
-#### `rm`
-- **Descripción**: Elimina archivos o directorios.
-- **Ejemplo**: `rm archivo`
-- **Opciones**:
-    - `-i` para confirmación antes de cada eliminación.
-    - `-r` para eliminación recursiva.
-
-#### `stat`
-- **Descripción**: Muestra información detallada sobre un archivo o directorio.
-- **Ejemplo**: `stat archivo`
-- **Opciones**:
-    - Sin opciones adicionales.
-
-## Permisos y Enlaces
-
-#### `chmod`
-- **Descripción**: Cambia los permisos de archivos o directorios.
-- **Ejemplo**: `chmod permisos archivo`
-- **Opciones**:
-    - Utiliza una notación simbólica o numérica para especificar permisos.
-    - Permisos:
-        - `r` para lectura.
-        - `w` para escritura.
-        - `x` para ejecución.
-        - `a` para todos los usuarios.
-        - `u` para el propietario.
-        - `g` para el grupo.
-        - `o` para otros.
-        - `+` para añadir permisos.
-        - `-` para quitar permisos.
-        - `=` para establecer permisos.
-        - `X` para establecer permisos de ejecución si el archivo es un directorio o ya tiene permisos de ejecución.
-        - `u+r` para añadir permiso de lectura al propietario.
-        - `g-w` para quitar permiso de escritura al grupo.
-        - `o=x` para establecer permiso de ejecución a otros.
-        - `a=rw` para establecer permisos de lectura y escritura a todos los usuarios.
-        - `755` para establecer permisos de lectura, escritura y ejecución al propietario, y solo lectura y ejecución al grupo y otros.
-
-#### `chown`
-- **Descripción**: Cambia el propietario de un archivo o directorio.
-- **Ejemplo**: `chown usuario archivo`
-- **Opciones**:
-    - Sin opciones adicionales.
-
-#### `ln`
-- **Descripción**: Crea enlaces físicos o simbólicos.
-- **Ejemplo**: `ln archivo enlace`
-- **Opciones**:
-    - `-s` para crear un enlace simbólico.
-
-#### `umask`
-- **Descripción**: Establece la máscara de permisos predeterminada para nuevos archivos y directorios.
-- **Ejemplo**: `umask 022` -> directorios: rwxr-xr-x, archivos: rw-r--r--
-- **Opciones**: No hay opciones adicionales.
-
-## Documentación y Ayuda
-
-#### `man`
-- **Descripción**: Muestra la página del manual para comandos.
-- **Ejemplo**: `man comando`
-- **Opciones**:
-    - `-k` para buscar páginas de manual que contienen una palabra clave.
-    - `-e` para encontrar secciones con una descripción específica.
-
-
-## Gestión de usuarios
-
-#### `useradd`
-- **Descripción**: Crea cuentas de usuario.
-- **Ejemplo**: `useradd "usuario"`
-- **Opciones**:
-  - `-c comentario`: Añade un comentario sobre el usuario.
-  - `-d directorio`: Directorio home del usuario.
-  - `-m`: Crea el directorio home si no existe.
-  - `-g grupo`: Grupo principal del usuario.
-  - `-G grupo1,grupo2`: Otros grupos a los que el usuario será añadido.
-  - `-s shell`: Shell de conexión para el usuario.
-
-#### `usermod`
-- **Descripción**: Modifica cuentas de usuario existentes.
-- **Ejemplo**: `usermod -s /bin/bash usuario`
-- **Opciones**:
-  - `-c comentario`: Modifica o añade un comentario.
-  - `-d directorio`: Cambia el directorio home del usuario.
-  - `-g grupo`: Cambia el grupo principal del usuario.
-  - `-G grupo1,grupo2`: Modifica otros grupos a los que el usuario pertenece.
-  - `-s shell`: Cambia el shell de conexión.
-  - `-l nuevo_nombre`: Cambia el nombre de usuario.
-
-#### `userdel`
-- **Descripción**: Elimina cuentas de usuario.
-- **Ejemplo**: `userdel usuario`
-- **Opciones**:
-  - `-r`: Elimina el directorio home del usuario y su correo.
-
-#### `passwd`
-- **Descripción**: Cambia o administra contraseñas.
-- **Ejemplo**: `passwd usuario`
-- **Opciones**:
-  - `-d`: Borra la contraseña del usuario, permitiendo acceso sin contraseña.
-  - `-f`: Fuerza al usuario a cambiar la contraseña en el próximo inicio de sesión.
-  - `-n días`: Establece el mínimo de días antes de permitir un cambio de contraseña.
-  - `-x días`: Establece el máximo de días antes de que la contraseña expire.
-  - `-w días`: Establece una advertencia de días antes de la expiración de la contraseña.
-  - `-i días`: Inhabilita la cuenta después de ciertos días de expirada la contraseña.
-
-#### `groupadd`
-- **Descripción**: Crea un grupo nuevo.
-- **Ejemplo**: `groupadd desarrolladores`
-- **Opciones**:
-  - Sin opciones específicas relevantes.
-
-#### `groupmod`
-- **Descripción**: Modifica grupos existentes.
-- **Ejemplo**: `groupmod -n desarrolladores_nuevo desarrolladores`
-- **Opciones**:
-  - `-n nuevo_nombre`: Cambia el nombre del grupo.
-
-#### `groupdel`
-- **Descripción**: Elimina un grupo.
-- **Ejemplo**: `groupdel desarrolladores`
-- **Opciones**:
-  - Sin opciones específicas relevantes.
-
-## Gestión de procesos
-
-#### `ps`
-- **Descripción**: Muestra información sobre los procesos activos.
-- **Ejemplo**: `ps -e` muestra todos los procesos del sistema.
-
-#### `top`
-- **Descripción**: Muestra una vista dinámica de los procesos en ejecución.
-- **Ejemplo**: `top` muestra procesos y su uso de recursos en tiempo real.
-
-#### `kill`
-- **Descripción**: Envía señales a los procesos para controlar su ejecución.
-- **Ejemplo**: `kill -9 [PID]` termina un proceso de forma forzosa.
+#### `umount`
+- **Descrición**: Desmonta sistemas de ficheiros.
+- **Exemplo**: `umount /mnt`
+- **Opcións**:
+  - `-f` para forzar o desmontaxe.
+  - `-l` para desmontar de forma segura.
 
 #### `jobs`
-- **Descripción**: Lista los trabajos en la sesión actual de la terminal.
-- **Ejemplo**: `jobs` muestra todos los trabajos activos.
+- **Descrición**: Amosa os traballos en segundo plano.
+- **Exemplo**: `jobs`
+- **Opcións**:
+  - Sen opcións adicionais.
+  - `-l` para amosar información detallada.
+  - `-p` para amosar os PIDs dos traballos.
+  - `-r` para amosar só os traballos en execución.
+  - `-s` para amosar só os traballos suspendidos.
+  - `-n` para amosar só os traballos que cambiaron recentemente de estado.
+  - **Nota**: Os traballos son procesos que se executan en segundo plano.
+
+## Xestión de Ficheiros e Directorios
+
+#### `pwd`
+- **Descrición**: Amosa o directorio actual de traballo.
+- **Exemplo**: `pwd`
+- **Opcións**:
+  - Sen opcións adicionais.
+
+#### `ls`
+- **Descrición**: Lista o contido dun directorio.
+- **Exemplo**: `ls /home/user/documentos`
+- **Opcións**:
+  - `-l` para formato detallado.
+  - `-a` para incluír ficheiros ocultos.
+  - `-R` para listaxe recursiva (recursiva: amosa ese directorio, e tamén o contido dos subdirectorios e así sucesivamente).
+  - `-t` para ordenar por data de modificación.
+  - `-S` para ordenar por tamaño.
+  - `-r` para ordenar en orde inversa.
+  - `-h` para amosar tamaños de ficheiros legibles para humanos.
+  - `-1` para amosar un ficheiro por liña.
+  - `-d` para amosar só directorios.
+  - `-i` para amosar o número de inode de cada ficheiro.
+  - `-g` para amosar só o grupo.
+  - `-o` para amosar sen información do grupo.
+  - `-F` para amosar un carácter especial ao final de cada ficheiro.
+  - `-A` para amosar todos os ficheiros, excepto `.` e `..`.
+  - `-m` para amosar os ficheiros separados por comas.
+  - `-U` para amosar sen ordenar.
+  - `-X` para amosar ordenado por extensión.
+  - `-N` para amosar sen ordenar.
+  - `-v` para amosar en orde natural.
+  - `-q` para amosar os nomes de ficheiros con caracteres non imprimibles como `?`.
+
+#### `[especificación de busca]`
+- **Descrición**: Busca ficheiros e directorios que cumpran certas normas.
+- **Exemplo**: ``ls comand?` ` amosa todos os ficheiros con extensión `.txt`.
+- **Opcións**:
+  - `*` para cero ou máis caracteres.
+  - `o*` para ficheiros que comecen con `o`.
+  - `*o`: para ficheiros que rematen con `o`.
+  - `*o*` para ficheiros que conteñan a letra `o`.
+  - `*.txt` para ficheiros con extensión `.txt`.
+  - `?` para un só carácter.
+  - `??` para dous caracteres.
+  - `o[1-9]` para ficheiros que comecen con `o` seguido dun só díxito.
+  - `[1-9]` para un só carácter do rango.
+  - `[!1-9]` para un só carácter que non estea no rango.
+  - `[a-z]` para un só carácter no rango.
+  - `[!a-z]` para un só carácter que non estea no rango.
+  - `[a,e,i,o,u]` para un só carácter na lista.
+
+#### `cd`
+- **Descrición**: Cambia o directorio actual.
+- **Exemplo**: `cd /home/user/documents`
+- **Opcións**:
+  - Sen argumentos volve ao directorio home.
+
+#### `cat`
+- **Descrición**: Amosa o contido dun ficheiro.
+- **Exemplo**: `cat ficheiro`
+- **Opcións**:
+  - Sen opcións adicionais.
+
+#### `touch`
+- **Descrición**: Crea un ficheiro baleiro ou actualiza o tempo de acceso e modificación dun ficheiro existente.
+- **Exemplo**: `touch /home/user/novoficheiro.txt` | `touch -t 202401010000 ficheiro` <-- Exemplo de cambio de data
+- **Opcións**:
+  - `-t` para cambiar a data de creación dun ficheiro previamente creado.
+  - `-c`: Non crea un ficheiro se xa existe.
+  - `-m`: Cambia só o tempo de modificación.
+
+#### `mkdir`
+- **Descrición**: Crea directorios.
+- **Exemplo**: `mkdir ~/proyecto/codigo`
+- **Opcións**:
+  - `-p` para crear directorios pais necesarios.
+  - `-m` para especificar permisos.
+  - `-v` para amosar mensaxes detalladas.
+
+#### `rmdir`
+- **Descrición**: Elimina directorios baleiros.
+- **Exemplo**: `rmdir ~/proyecto/codigo`
+- **Opcións**:
+  - `-p` para eliminar directorios pais se tamén están baleiros.
+
+#### `mv`
+- **Descrición**: Move ou renomea ficheiros ou directorios.
+- **Exemplo** para mover ficheiros: `mv orixe destino` | `mv ~/cartafol1 /tmp/cartafol1`
+- **Exemplo** para renomear ficheiros: `mv ficheiro novo_nome` | `mv ~/ficheiro1.txt ~/ficheiro2.txt`
+- **Opcións**:
+  - `-i` para preguntar antes de sobrescribir.
+
+#### `cp`
+- **Descrición**: Copia ficheiros ou directorios. A opción `-R` é necesaria para copiar directorios. 
+- **Exemplo**: `cp orixe destino`
+- **Opcións**:
+  - `-i` para preguntar antes de sobrescribir.
+  - `-R` para copiar directorios de forma recursiva.
+  - `-p` para preservar o tempo de modificación, acceso e permisos.
+
+#### `rm`
+- **Descrición**: Elimina ficheiros ou directorios.
+- **Exemplo**: `rm -rf temp`
+- **Opcións**:
+  - `-i` para confirmación antes de cada eliminación.
+  - `-r` para eliminación recursiva.
+  - `-f` para forzar a eliminación sen confirmación.
+
+#### `stat`
+- **Descrición**: Amosa información detallada sobre un ficheiro ou directorio.
+- **Exemplo**: `stat ficheiro`
+- **Opcións**:
+  - Sen opcións adicionais.
+
+## Permisos e Enlaces
+
+#### `chmod`
+- **Descrición**: Cambia os permisos de ficheiros ou directorios.
+- **Exemplo** forma simbólica: `chmod u+r ficheiro`
+- **Exemplo** forma octal: `chmod 755 ficheiro` --> Propietario (1º num): rwx, Grupo (2º num): r-x, Outros (3º num): r-x
+- **Forma octal**: 
+  - 4: Lectura (r).
+  - 2: Escritura (w).
+  - 1: Execución (x).
+  - 0: Sen permisos.
+  Hai que sumar os valores dos permisos que se queren dar.
+- **Opcións**:
+  - Utiliza unha notación simbólica ou numérica para especificar permisos.
+  - Permisos:
+    - `r` para lectura.
+    - `w` para escritura.
+    - `x` para execución.
+    - `a` para todos os usuarios.
+    - `u` para o propietario.
+    - `g` para o grupo.
+    - `o` para outros.
+    - `+` para engadir permisos.
+    - `-` para quitar permisos.
+    - `=` para establecer permisos.
+    - `X` para establecer permisos de execución se o ficheiro é un directorio ou xa ten permisos de execución.
+    - `u+r` para engadir permiso de lectura ao propietario.
+    - `g-w` para quitar permiso de escritura ao grupo.
+    - `o=x` para establecer permiso de execución a outros.
+    - `a=rw` para establecer permisos de lectura e escritura a todos os usuarios.
+    - `755` para establecer permisos de lectura, escritura e execución ao propietario, e só lectura e execución ao grupo e outros.
+
+#### `chown`
+- **Descrición**: Cambia o propietario dun ficheiro ou directorio.
+- **Exemplo**: `chown juan:desenvolvedores ficheiro.txt` --> Establece ao usuario propietario como "juan" e ao grupo propietario como "desenvolvedores".
+- **Opcións**:
+  - Sen opcións adicionais.
+
+#### `ln`
+- **Descrición**: Crea enlaces físicos ou simbólicos.
+- **Exemplo**: `ln ficheiro enlace`
+- **Opcións**:
+  - `-s` para crear un enlace simbólico.
+
+#### `umask`
+- **Descrición**: Establece a máscara de permisos predeterminada para novos ficheiros e directorios.
+- **Exemplo**: `umask 022` -> directorios: rwxr-xr-x, ficheiros: rw-r--r--
+- **Opcións**: Non hai opcións adicionais.
+- **Explicación**: A máscara de permisos réstase dos permisos máximos para determinar os permisos reais. Por exemplo, se a máscara é 022, os permisos máximos son 777 e os permisos reais son 755 para directorios e 644 para ficheiros.
+
+#### `sort`
+- **Descrición**: Ordena liñas de texto nun ficheiro.
+- **Exemplo**: `sort -n notas.txt`
+- **Opcións**:
+  - `-r` para ordenar en orde inversa.
+  - `-n` para ordenar numericamente.
+  - `-f` para ordenar sen distinguir maiúsculas e minúsculas.
+  - `-k` para especificar un campo de ordenación.
+
+#### `wc`
+- **Descrición**: Conta liñas, palabras e caracteres nun ficheiro.
+- **Exemplo**: `wc ficheiro`
+- **Opcións**:
+  - `-l` para contar liñas.
+  - `-w` para contar palabras.
+  - `-c` para contar caracteres.
+
+#### `>`, `>>`
+- **Descrición**: Redirixe a saída estándar a un ficheiro.
+- **Exemplo**: `ls > ficheiros.txt` | `ls >> ficheiros.txt`
+- **Opcións**:
+  - `>` sobrescribe o ficheiro.
+  - `>>` engade ao ficheiro sen sobrescribilo.
+
+## Documentación e Axuda
+
+#### `man`
+- **Descrición**: Amosa a páxina do manual para comandos.
+- **Exemplo**: `man comando`
+- **Opcións**:
+  - `-k` para buscar páxinas de manual que conteñen unha palabra clave.
+  - `-e` para atopar seccións con unha descrición específica.
+
+
+## Xestión de usuarios
+
+#### `useradd`
+- **Descrición**: Crea contas de usuario.
+- **Exemplo**: `useradd "usuario"`
+- **Opcións**:
+  - `-c comentario`: Engade un comentario sobre o usuario.
+  - `-d directorio`: Directorio home do usuario.
+  - `-m`: Crea o directorio home se non existe.
+  - `-g grupo`: Grupo principal do usuario.
+  - `-G grupo1,grupo2`: Outros grupos aos que o usuario será engadido.
+  - `-s shell`: Shell de conexión para o usuario.
+
+#### `usermod`
+- **Descrición**: Modifica contas de usuario existentes.
+- **Exemplo**: `usermod [opcións] usuario`
+- **Opcións**:
+  - `-c comentario`: Modifica ou engade un comentario.
+  - `-d directorio`: Cambia o directorio home do usuario.
+  - `-g grupo`: Cambia o grupo principal do usuario.
+  - `-G grupo1,grupo2`: Modifica outros grupos aos que o usuario pertence.
+  - `-s shell (/bin/bash x ex)`: Cambia o shell de conexión.
+  - `-l novo_nome`: Cambia o nome de usuario.
+  - `-L usuario`: Bloquea a conta de usuario.
+  - `-U usuario`: Desbloquea a conta de usuario.
+  - `-e data`: Establece a data de expiración da conta.
+  - `-f días`: Número de días nos que a conta pode permanecer inactiva antes de eliminarse.
+
+#### `userdel`
+- **Descrición**: Elimina contas de usuario.
+- **Exemplo**: `userdel usuario`
+- **Opcións**:
+  - `-r`: Elimina o directorio home do usuario e o seu correo.
+
+#### `passwd`
+- **Descrición**: Cambia ou administra contrasinais.
+- **Exemplo**: `passwd -d usuario`
+- **Opcións**:
+  - `-d`: Borra a contrasinal do usuario, permitindo acceso sen contrasinal.
+  - `-f`: Forza ao usuario a cambiar a contrasinal no próximo inicio de sesión.
+  - `-w`: Establece o número de días antes de que un usuario deba cambiar a súa contrasinal.
+  - `-i`: Establece o número de días despois de que a contrasinal expire antes de que a conta se bloquee.
+  - `-s`: Amosa información sobre a contrasinal do usuario. (Bloqueado: LK, Ten contrasinal: PS, Inactivo: NP)
+  - `-r número`: Número de intentos permitidos para cambiar unha contrasinal e poñela correcta.
+  - `-n días`: Establece o mínimo de días antes de permitir un cambio de contrasinal.
+  - `-x días`: Establece o máximo de días antes de que a contrasinal expire.
+  - `-w días`: Establece unha advertencia de días antes da expiración da contrasinal.
+  - `-i días`: Inhabilita a conta despois de certos días de expirada a contrasinal.
+
+#### `groupadd`
+- **Descrición**: Crea un grupo novo.
+- **Exemplo**: `groupadd desenvolvedores`
+- **Opcións**:
+  - `-g`: GID do grupo.
+  - `-r`: Crea un grupo de sistema.
+
+#### `groupmod`
+- **Descrición**: Modifica grupos existentes.
+- **Exemplo**: `groupmod -n desenvolvedores_novo desenvolvedores`
+- **Opcións**:
+  - `-n novo_nome`: Cambia o nome do grupo.
+
+#### `groupdel`
+- **Descrición**: Elimina un grupo.
+- **Exemplo**: `groupdel desenvolvedores`
+- **Opcións**:
+  - Sen opcións específicas relevantes.
+
+
+## Xestión de procesos
+
+#### `ps`
+- **Descrición**: Amosa información sobre os procesos activos.
+- **Exemplo**: `ps -e`
+- **Opcións**:
+  - `aux` para amosar procesos para todos os usuarios.
+  - `forest` para amosar procesos en forma de árbore.
+  - `-e` para amosar todos os procesos.
+  - `-f` para amosar información detallada.
+  - `-u` para amosar procesos dun usuario.
+  - `-x` para amosar procesos sen terminal asociada.
+
+#### `top`
+- **Descrición**: Amosa unha vista dinámica dos procesos en execución.
+- **Exemplo**: `top` amosa procesos e o seu uso de recursos en tempo real.
+- **Opcións**:
+  - `q` para saír de `top`.
+  - `P` para ordenar por uso de CPU.
+  - `M` para ordenar por uso de memoria.
+  - `u` para filtrar por usuario.
+  - `k` para matar un proceso.
+  - `r` para renicear un proceso.
+
+#### `kill`
+- **Descrición**: Envia sinais aos procesos para controlar a súa execución.
+- **Exemplo**: `kill -9 [PID]` termina un proceso de forma forzosa.
+- **Opcións**:
+  - `-l` para amosar unha lista de sinais.
+  - `-9` para enviar a sinal SIGKILL (SIGKILL: termina inmediatamente).
+  - `-15` para enviar a sinal SIGTERM (SIGTERM: termina "amablemente").
+
+#### `jobs`
+- **Descrición**: Lista os traballos na sesión actual da terminal.
+- **Exemplo**: `jobs` amosa todos os traballos activos.
 
 #### `bg`
-- **Descripción**: Reanuda la ejecución de un trabajo detenido en segundo plano.
-- **Ejemplo**: `bg %1` continúa con el primer trabajo listado por `jobs` en segundo plano.
+- **Descrición**: Reanuda a execución dun traballo detido en segundo plano.
+- **Exemplo**: `bg %1` continúa co primeiro traballo listado por `jobs` en segundo plano.
 
 #### `fg`
-- **Descripción**: Mueve trabajos al primer plano.
-- **Ejemplo**: `fg %1` lleva el primer trabajo al primer plano.
+- **Descrición**: Move traballos ao primeiro plano.
+- **Exemplo**: `fg %1` leva o primeiro traballo ao primeiro plano.
 
 #### `nohup`
-- **Descripción**: Ejecuta comandos que permanecen activos tras cerrar la terminal.
-- **Ejemplo**: `nohup ./script &` ejecuta un script en segundo plano que no se termina al cerrar la terminal.
+- **Descrición**: Executa comandos que permanecen activos despois de pechar a terminal.
+- **Exemplo**: `nohup ./script &` executa un script en segundo plano que non se termina ao pechar a terminal.
+- 
+#### `grep`
+- **Descrición**: Filtra texto con expresións regulares.
+- **Exemplo**: `ps aux | grep firefox` amosa procesos relacionados con Firefox.
+- **Opcións**:
+  - `-i` para ignorar maiúsculas e minúsculas.
+  - `-v` para invertir a busca.
+  - `-c` para amosar o número de coincidencias.
+  - `-n` para amosar o número de liña de cada coincidencia.
 
 ## Utilidades de Monitorización
 
 #### `htop`
-- **Descripción**: Alternativa interactiva a `top` con una interfaz más rica.
-- **Ejemplo**: `htop` muestra una visión interactiva y colorida de los procesos en ejecución.
+- **Descrición**: Alternativa interactiva a `top` cunha interface máis rica.
+- **Exemplo**: `htop` amosa unha vista interactiva e colorida dos procesos en execución.
+- **Opcións**:
+  - `F2` para configurar `htop`.
+  - `F3` para buscar procesos.
+  - `F4` para filtrar procesos.
+  - `F5` para ordenar procesos.
+  - `F6` para seleccionar columnas.
+  - `F9` para enviar sinais a procesos.
+  - `F10` para saír de `htop`.
 
 #### `pstree`
-- **Descripción**: Muestra los procesos en forma de árbol.
-- **Ejemplo**: `pstree` visualiza la jerarquía de procesos del sistema.
+- **Descrición**: Amosa os procesos en forma de árbore.
+- **Exemplo**: `pstree` visualiza a xerarquía de procesos do sistema.
+- **Opcións**:
+  - `-p` para amosar os PIDs dos procesos.
+  - `-u` para amosar o usuario que iniciou cada proceso.
 
-## Gestión de la Prioridad de Procesos
+
+## Xestión da Prioridade de Procesos
 
 #### `nice`
-- **Descripción**: Inicia un proceso con una prioridad dada.
-- **Ejemplo**: `nice -n 10 ./script` ejecuta `script` con una prioridad baja.
+- **Descrición**: Inicia un proceso cunha prioridade dada.
+- **Exemplo**: `nice -n 10 ./script` executa `script` cunha prioridade baixa.
+- **Opcións**:
+  - `-n` para especificar a nova prioridade.
+  - `-20` para a prioridade máis alta.
+  - `19` para a prioridade máis baixa.
 
 #### `renice`
-- **Descripción**: Cambia la prioridad de procesos en ejecución.
-- **Ejemplo**: `renice 10 -p [PID]` cambia la prioridad de un proceso existente a 10.
+- **Descrición**: Cambia a prioridade de procesos en execución.
+- **Exemplo**: `renice 10 -p [PID]` cambia a prioridade dun proceso existente a 10.
+- **Opcións**:
+  - `-n` para especificar a nova prioridade.
+  - `-g` para cambiar a prioridade dun grupo.
+  - `-u` para cambiar a prioridade dun usuario.
+  - `-p` para especificar o PID do proceso.
+  - `-g` para especificar o GID do grupo.
 
-## Información del Sistema
+## Información do Sistema
 
 #### `/proc`
-- **Descripción**: Directorio virtual que contiene información detallada del sistema y los procesos.
-- **Ejemplo**: `cat /proc/cpuinfo` muestra información sobre el CPU.
+- **Descrición**: Directorio virtual que contén información detallada do sistema e dos procesos.
+- **Exemplo**: `cat /proc/cpuinfo` amosa información sobre a CPU.
+- **Nota**: `/proc` non contén arquivos reais, senón información do sistema en tempo real.
 
 #### `dmesg`
-- **Descripción**: Muestra mensajes del kernel, útil para diagnosticar problemas.
-- **Ejemplo**: `dmesg | grep usb` muestra mensajes del kernel relacionados con dispositivos USB.
+- **Descrición**: Amosa mensaxes do kernel, útil para diagnosticar problemas.
+- **Exemplo**: `dmesg | grep usb` amosa mensaxes do kernel relacionadas con dispositivos USB.
 
-## Gestión de Tareas Programadas
+
+## Xestión de Tarefas Programadas
 
 #### `cron`
-- **Descripción**: Programa tareas para ejecutarlas automáticamente en horarios predefinidos.
-- **Ejemplo**: Editar `/etc/crontab` para añadir una tarea cronizada.
+- **Descrición**: Programa tarefas para executalas automaticamente en horarios predefinidos.
+- **Exemplo**: Editar `/etc/crontab` para engadir unha tarefa cronizada.
 
 #### `at`
-- **Descripción**: Programa comandos para ejecutarse una sola vez en un momento específico.
-- **Ejemplo**: `echo "sh backup.sh" | at 23:00` programa un script de respaldo para ejecutarse a las 11 PM.
-
-## Uso de Señales
-
-- **SIGKILL (`kill -9`)**: Termina procesos de manera inmediata.
-  - **Ejemplo**: `kill -9 [PID]` 
-- **SIGTERM (`kill -15`)**: Termina procesos de manera suave, permitiendo la limpieza.
-  - **Ejemplo**: `kill -15 [PID]`
-- **SIGSTOP**: Detiene temporalmente un proceso.
-  - **Ejemlo**: `kill -STOP [PID]`
-- **SIGCONT**: Continúa con un proceso previamente detenido.
-  - **Ejemlo**: `kill -CONT [PID]`
-
-## Ejecución en Segundo Plano
-
-- **Descripción**: Permite ejecutar procesos sin bloquear la terminal.
-- **Ejemplo**: `command &` ejecuta `command` en segundo plano.
+- **Descrición**: Programa comandos para executarse unha soa vez nun momento específico.
+- **Exemplo**: `echo "sh backup.sh" | at 23:00` programa un script de copia de seguridade para executarse ás 23:00.
 
 
+## Uso de Sinais
+
+- **SIGKILL (`kill -9`)**: Termina procesos de forma inmediata.
+  - **Exemplo**: `kill -9 [PID]` 
+- **SIGTERM (`kill -15`)**: Termina procesos de forma suave, permitindo a limpeza.
+  - **Exemplo**: `kill -15 [PID]`
+- **SIGSTOP**: Detén temporalmente un proceso.
+  - **Exemplo**: `kill -STOP [PID]`
+- **SIGCONT**: Continúa con un proceso previamente detido.
+  - **Exemplo**: `kill -CONT [PID]`
 
 
+## Execución en Segundo Plano
 
-
-
+- **Descripción**: Permite executar procesos sen bloquear a terminal.
+- **Exemplo**: `command &` executa `command` en segundo plano.
