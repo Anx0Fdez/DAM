@@ -1,7 +1,7 @@
 # ***Bash***
-### *by: [Anxo Fdez]*
+### *por: [Anxo Fdez]*
 #### *github: [Anx0Fdez](https://github.com/Anx0Fdez)* 
-###### *@Author:* [Ana Valladares](https://github.com/anavalladaares)
+###### *@Autor:* [Ana Valladares](https://github.com/anavalladaares)
 
 ---
 # Comandos Linux
@@ -9,115 +9,115 @@
 Este documento contiene una lista de comandos de Linux útiles para administrar usuarios, archivos, procesos y más. Los comandos se dividen en categorías para facilitar su uso y comprensión.
 
 ### ÍNDICE
-  - [Comandos Xerais](#comandos-xerais)
-  - [Xestión de Ficheiros e Directorios](#xestión-de-ficheiros-e-directorios)
-  - [Permisos e Enlaces](#permisos-e-enlaces)
-  - [Documentación e Axuda](#documentación-e-axuda)
-  - [Xestión de usuarios](#xestión-de-usuarios)
-  - [Xestión de procesos](#xestión-de-procesos)
+  - [Comandos Generales](#comandos-generales)
+  - [Gestión de Archivos y Directorios](#gestión-de-archivos-y-directorios)
+  - [Permisos y Enlaces](#permisos-y-enlaces)
+  - [Documentación y Ayuda](#documentación-y-ayuda)
+  - [Gestión de usuarios](#gestión-de-usuarios)
+  - [Gestión de procesos](#gestión-de-procesos)
   - [Utilidades de Monitorización](#utilidades-de-monitorización)
-  - [Xestión da Prioridade de Procesos](#xestión-da-prioridade-de-procesos)
-  - [Información do Sistema](#información-do-sistema)
-  - [Xestión de Tarefas Programadas](#xestión-de-tarefas-programadas)
-  - [Uso de Sinais](#uso-de-sinais)
-  - [Execución en Segundo Plano](#execución-en-segundo-plano)
+  - [Gestión de la Prioridad de Procesos](#gestión-de-la-prioridad-de-procesos)
+  - [Información del Sistema](#información-del-sistema)
+  - [Gestión de Tareas Programadas](#gestión-de-tareas-programadas)
+  - [Uso de Señales](#uso-de-señales)
+  - [Ejecución en Segundo Plano](#ejecución-en-segundo-plano)
 ---
 
-## Comandos Xerais
+## Comandos Generales
 
 #### `uname`
-- **Descrición**: Obtén o nome do sistema operativo.
-- **Exemplo**: `uname -a`
-- **Opcións**:
-    - `-X` para información extendida (dependendo do sistema).
-    - `-a` para mostrar toda a información.
-    - `-r` para mostrar a versión do kernel.
+- **Descripción**: Obtiene el nombre del sistema operativo.
+- **Ejemplo**: `uname -a`
+- **Opciones**:
+    - `-X` para información extendida (dependiendo del sistema).
+    - `-a` para mostrar toda la información.
+    - `-r` para mostrar la versión del kernel.
 
 #### `logname`
-- **Descrición**: Amosa o nome de usuario co que se iniciou a sesión.
-- **Exemplo**: `logname`
-- **Opcións**:
-    - Sen opcións adicionais.
+- **Descripción**: Muestra el nombre de usuario con el que se inició la sesión.
+- **Ejemplo**: `logname`
+- **Opciones**:
+    - Sin opciones adicionales.
 
 #### `id`
-- **Descrición**: Amosa o UID e GID do usuario.
-- **Exemplo**: `id`
-- **Opcións**:
-    - `-u` para amosar só o UID.
-    - `-g` para amosar só o GID.
-    - `-G` para amosar os grupos aos que pertence o usuario.
-    - `-n` para amosar nomes de usuario e grupo en lugar de números.
-    - `-r` para amosar o nome real e efectivo do usuario.
-    - `-Z` para amosar o contexto de seguridade do usuario.
-    - `-a` para amosar todos os valores.
-    - `-F` para amosar todos os valores en formato JSON.
-  - **Nota**: O UID é o identificador único do usuario e o GID é o identificador único do grupo.
-- **Exemplo**: `id -u` | `id -g` | `id -G` | `id -n` | `id -r` | `id -Z` | `id -a` | `id -F`
+- **Descripción**: Muestra el UID y GID del usuario.
+- **Ejemplo**: `id`
+- **Opciones**:
+    - `-u` para mostrar solo el UID.
+    - `-g` para mostrar solo el GID.
+    - `-G` para mostrar los grupos a los que pertenece el usuario.
+    - `-n` para mostrar nombres de usuario y grupo en lugar de números.
+    - `-r` para mostrar el nombre real y efectivo del usuario.
+    - `-Z` para mostrar el contexto de seguridad del usuario.
+    - `-a` para mostrar todos los valores.
+    - `-F` para mostrar todos los valores en formato JSON.
+  - **Nota**: El UID es el identificador único del usuario y el GID es el identificador único del grupo.
+- **Ejemplo**: `id -u` | `id -g` | `id -G` | `id -n` | `id -r` | `id -Z` | `id -a` | `id -F`
 
 #### `date`
-- **Descrición**: Amosa ou establece a data e hora do sistema.
-- **Exemplo**: `date`
-- **Opcións**:
-    - `+formato` para amosar a data nun formato específico.
+- **Descripción**: Muestra o establece la fecha y hora del sistema.
+- **Ejemplo**: `date`
+- **Opciones**:
+    - `+formato` para mostrar la fecha en un formato específico.
 
 #### `who`
-- **Descrición**: Amosa quen está conectado ao sistema.
-- **Exemplo**: `who`
-- **Opcións**:
-    - `-H` para incluír cabeceiras.
-    - `-u` para amosar información detallada.
-    - `-q` para amosar só os nomes e o total de usuarios.
+- **Descripción**: Muestra quién está conectado al sistema.
+- **Ejemplo**: `who`
+- **Opciones**:
+    - `-H` para incluir encabezados.
+    - `-u` para mostrar información detallada.
+    - `-q` para mostrar solo los nombres y el total de usuarios.
 
 #### `mount`
-- **Descrición**: Amosa os sistemas de ficheiros montados.
-- **Exemplo**: `mount`
-- **Opcións**:
-  - `-t tipo` para amosar só sistemas de ficheiros dun tipo específico.
-  - `-l` para amosar só os sistemas de ficheiros montados.
-  - `-a` para montar todos os sistemas de ficheiros especificados en `/etc/fstab`.
+- **Descripción**: Muestra los sistemas de archivos montados.
+- **Ejemplo**: `mount`
+- **Opciones**:
+  - `-t tipo` para mostrar solo sistemas de archivos de un tipo específico.
+  - `-l` para mostrar solo los sistemas de archivos montados.
+  - `-a` para montar todos los sistemas de archivos especificados en `/etc/fstab`.
 
 #### `umount`
-- **Descrición**: Desmonta sistemas de ficheiros.
-- **Exemplo**: `umount /mnt`
-- **Opcións**:
-  - `-f` para forzar o desmontaxe.
+- **Descripción**: Desmonta sistemas de archivos.
+- **Ejemplo**: `umount /mnt`
+- **Opciones**:
+  - `-f` para forzar el desmontaje.
   - `-l` para desmontar de forma segura.
 
 #### `jobs`
-- **Descrición**: Amosa os traballos en segundo plano.
-- **Exemplo**: `jobs`
-- **Opcións**:
-  - Sen opcións adicionais.
-  - `-l` para amosar información detallada.
-  - `-p` para amosar os PIDs dos traballos.
-  - `-r` para amosar só os traballos en execución.
-  - `-s` para amosar só os traballos suspendidos.
-  - `-n` para amosar só os traballos que cambiaron recentemente de estado.
-  - **Nota**: Os traballos son procesos que se executan en segundo plano.
+- **Descripción**: Muestra los trabajos en segundo plano.
+- **Ejemplo**: `jobs`
+- **Opciones**:
+  - Sin opciones adicionales.
+  - `-l` para mostrar información detallada.
+  - `-p` para mostrar los PIDs de los trabajos.
+  - `-r` para mostrar solo los trabajos en ejecución.
+  - `-s` para mostrar solo los trabajos suspendidos.
+  - `-n` para mostrar solo los trabajos que cambiaron recientemente de estado.
+  - **Nota**: Los trabajos son procesos que se ejecutan en segundo plano.
 
-## Xestión de Ficheiros e Directorios
+## Gestión de Archivos y Directorios
 
 #### `pwd`
-- **Descrición**: Amosa o directorio actual de traballo.
-- **Exemplo**: `pwd`
-- **Opcións**:
-  - Sen opcións adicionais.
+- **Descripción**: Muestra el directorio actual de trabajo.
+- **Ejemplo**: `pwd`
+- **Opciones**:
+  - Sin opciones adicionales.
 
 #### `ls`
-- **Descrición**: Lista o contido dun directorio.
-- **Exemplo**: `ls /home/user/documentos`
-- **Opcións**:
+- **Descripción**: Lista el contenido de un directorio.
+- **Ejemplo**: `ls /home/user/documentos`
+- **Opciones**:
   - `-l` para formato detallado.
-  - `-a` para incluír ficheiros ocultos.
-  - `-R` para listaxe recursiva (recursiva: amosa ese directorio, e tamén o contido dos subdirectorios e así sucesivamente).
-  - `-t` para ordenar por data de modificación.
+  - `-a` para incluir archivos ocultos.
+  - `-R` para listado recursivo (recursivo: muestra ese directorio, y también el contenido de los subdirectorios y así sucesivamente).
+  - `-t` para ordenar por fecha de modificación.
   - `-S` para ordenar por tamaño.
-  - `-r` para ordenar en orde inversa.
-  - `-h` para amosar tamaños de ficheiros legibles para humanos.
-  - `-1` para amosar un ficheiro por liña.
-  - `-d` para amosar só directorios.
-  - `-i` para amosar o número de inode de cada ficheiro.
-  - `-g` para amosar só o grupo.
+  - `-r` para ordenar en orden inverso.
+  - `-h` para mostrar tamaños de archivos legibles para humanos.
+  - `-1` para mostrar un archivo por línea.
+  - `-d` para mostrar solo directorios.
+  - `-i` para mostrar el número de inode de cada archivo.
+  - `-g` para
   - `-o` para amosar sen información do grupo.
   - `-F` para amosar un carácter especial ao final de cada ficheiro.
   - `-A` para amosar todos os ficheiros, excepto `.` e `..`.

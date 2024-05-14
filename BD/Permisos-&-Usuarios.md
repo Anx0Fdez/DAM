@@ -1,4 +1,4 @@
- # ***PostgreSQL***
+# ***PostgreSQL***
 ### *by: [Anxo Fdez]*
 #### *github: [Anx0Fdez](https://github.com/Anx0Fdez)*
 
@@ -16,6 +16,7 @@ sudo systemctl reload postgresql -- Reiniciar
     ->> \i f2.dump -- Importar base de datos desde un fichero llamado `f2.dump`
 -> pg_dump -U postgres -Fc futbol2 > f2c.dump -- Exportar base de datos a un fichero comprimido llamado `f2c.dump`
     ->> pg_restore -U postgres -C -d postgres f2c.dump -- Importar base de datos desde un fichero comprimido llamado `f2c.dump`
+-> pg_restore -U postgres -a -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
 
 -- PLANTILLAS
 - createdb -U postgres -T template0 futbolrestaurada -- Crear base de datos a partir de una plantilla
@@ -31,6 +32,7 @@ psql dam a -- Conectarse a una base de datos con usario a
 \dn -- Ver esquemas
 \du -- Ver usuarios
 \dt -- Ver tablas
+\d tabla -- Ver descripción de una tabla
 \dv -- Ver vistas
 \dp -- Ver permisos de usuarios en tablas
 \l -- Ver bases de datos
@@ -103,13 +105,36 @@ QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
 2. select * from v; -- Ver vista
 3. drop view v; -- Eliminar vista
 ```
-### ***<u>ROLES</u>***
+#### *ROLES*
 ```sql
 create role readonly; -- Crear rol
 grant connect on database dam to readonly; -- Dar permisos a un rol
 grant insert on es3.xogador to readonly; -- Dar permisos a un rol
 grant readonly to u4; -- Dar rol a un usuario
 ```
+
+#### *PERMISOS A NIVEL DE FILA*
+```sql
+alter table factura enable row level security; -- Habilitar permisos a nivel de fila
+
+'POLITICAS PERMISIVAS'
+1. create policy solo_finalizada on facturas to contabilidad using (finalizada=TRUE); -- Crear política forma 1
+2. create policy todas_as_filas on facturas to vwntas using (TRUE); -- Crear política forma 2
+
+'POLITICAS RESTRICTIVAS'
+create polity non_borrar on facturas as restrictive for delete to public using (finalizada=FALSE); -- Crear política restrictiva
+
+'ELIMINAR POLÍTICAS'
+drop policy solo_finalizada on facturas; -- Eliminar política
+
+-- Postgres aplica primeiro a suma (OR) das politicas permisivas, a logo, sobre as filas que quedan aplica a multiplicación (AND) das politicas restrictivas.
+
+rollback; -- Deshacer cambios
+
+-- As politicas restrictivas seleccionan para a operacion espacificada as filas que cumplan as espresions Using utilizada
+```
+---
+---
 ### ***[ERRORES FRECUENTES]***
 ```sql
 -- Errores frecuentes en PostgreSQL
@@ -120,4 +145,4 @@ ERROR:  null value in column "codx" of relation "xogador" violates not-null cons
 ERROR: cannot insert into v2 values('x41', 'luis', 'e9', 'laso'); -- No se puede insertar en una vista con dos tablas
 ```
 
-
+alter table xogador enable row level security; -- Habilitar permisos a nivel de fila
