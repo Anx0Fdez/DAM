@@ -11,16 +11,18 @@ Este documento contiene una lista de comandos de Linux útiles para administrar 
 ### ÍNDICE
   - [Comandos Generales](#comandos-generales)
   - [Gestión de Archivos y Directorios](#gestión-de-archivos-y-directorios)
-  - [Permisos y Enlaces](#permisos-y-enlaces)
-  - [Documentación y Ayuda](#documentación-y-ayuda)
-  - [Gestión de usuarios](#gestión-de-usuarios)
-  - [Gestión de procesos](#gestión-de-procesos)
+  - [Permisos e Enlaces](#permisos-e-enlaces)
+  - [Documentación e Axuda](#documentación-e-axuda)
+  - [Xestión de usuarios](#xestión-de-usuarios)
+  - [Xestión de procesos](#xestión-de-procesos)
   - [Utilidades de Monitorización](#utilidades-de-monitorización)
-  - [Gestión de la Prioridad de Procesos](#gestión-de-la-prioridad-de-procesos)
-  - [Información del Sistema](#información-del-sistema)
-  - [Gestión de Tareas Programadas](#gestión-de-tareas-programadas)
-  - [Uso de Señales](#uso-de-señales)
-  - [Ejecución en Segundo Plano](#ejecución-en-segundo-plano)
+  - [Xestión da Prioridade de Procesos](#xestión-da-prioridade-de-procesos)
+  - [Información do Sistema](#información-do-sistema)
+  - [Xestión de Tarefas Programadas](#xestión-de-tarefas-programadas)
+  - [Uso de Sinais](#uso-de-sinais)
+  - [Execución en Segundo Plano](#execución-en-segundo-plano)
+  - [Examen Comados](#examen-comandos)
+
 ---
 
 ## Comandos Generales
@@ -243,6 +245,7 @@ Este documento contiene una lista de comandos de Linux útiles para administrar 
 
 #### `chown`
 - **Descrición**: Cambia o propietario dun ficheiro ou directorio.
+  - `chown user2 carpeta1` --> Cambia o propietario da carpeta1 a user2.
 - **Exemplo**: `chown juan:desenvolvedores ficheiro.txt` --> Establece ao usuario propietario como "juan" e ao grupo propietario como "desenvolvedores".
 - **Opcións**:
   - Sen opcións adicionais.
@@ -500,3 +503,68 @@ Este documento contiene una lista de comandos de Linux útiles para administrar 
 
 - **Descripción**: Permite executar procesos sen bloquear a terminal.
 - **Exemplo**: `command &` executa `command` en segundo plano.
+
+---
+
+# Examen Comandos
+1. Cales son os permisos do cartafol "contabilidade" contido en exame? Podes escribir nesa carpeta co teu usuario actual?
+
+`ls -l`
+
+2. Como hai que facer para poder mudar os permisos de "contabilidade" para que, membros do grupo do usuario actual, poidan ler o contido do cartafol e traballar cos seus ficheiros?
+
+`chmod 750 contabilidade/`
+
+3. Como se pode comprobar quen é o dono do cartafol "contabilidade"? Como se pode mudar o dono para que sexa agora o usuario "comercial1"?
+
+`ls -l`
+
+`chown -R comercial1 contabilidade/`
+
+4. Como se pode realizar a operación do punto 2 a tódolo contido no cartafol de unha soa vez? Como se pode facer a operación do punto 3 a tódolo contido do cartafol de unha soa vez?
+
+`chmod -R 750 contabilidade/`
+
+`chown -R comercial1 contabilidade/`
+
+5. Mudar os permisos do cartafol compras de forma que se retire o permiso de paso para tódolos demais usuarios que non sexan o dono, nin pertencentes ao grupo definido para o cartafol.
+
+`ls -l`
+
+`chmod 754 compras/`
+
+6. Como mostrar por pantalla o listado dos ficheiros de dentro de ventas que comecen por ventas e o ano sexa entre o 1990 e 1999?
+
+`ls ventas199[0-9]`
+
+7. Como se pode mover o ficheiro clientes.txt a compras? Como tes que facer para que iso sexa posible?
+
+`mv ventas/clientes.txt compras/`
+
+8. Como se crea un enlace ao ficheiro clientes.txt, chamado enlaceClientes, que está situado actualmente no cartafol compras? Utilizando o enlace enlaceClientes visualiza por pantalla o contido do ficheiro. Que ten de contido?
+
+`ln compras/clientes.txt enlaceClientes`
+
+`cat enlaceClientes`
+
+9. Como se crea un enlace simbólico o cartafol norte (ventas/zoas) no cartafol exame? Como se pode facer para que siga sendo funcional si o movemos de cartafol?
+
+`ln -s ventas/zoas/norte`
+
+10. Tes un proceso activo chamado "gnome-terminal-server"? Cal é o seu PID? Copia e pega a parte do listado que permita corroborar iso.
+
+`ps -e --> 2480`
+
+11. Que significa a columna do listado que pon "links"?
+
+`Enlaces a directorios ou ficheiros`
+
+12. Elimina o proceso "gnome-terminal-server" desde a consola. Cal é o comando?
+
+`ps -ef | grep nautilus-dekstop`
+`pstree -ps 7329`
+
+
+14. Borrar o contido de ventas e tódolo seu contido cunha soa instrucción.
+
+`rm -rf ventas/*`
