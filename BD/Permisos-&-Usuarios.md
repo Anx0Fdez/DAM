@@ -10,26 +10,13 @@ Gestión de permisos en PostgreSQL. Es importante tener en cuenta que en Postgre
 ```sql
 sudo pluma /etc/postgresql/13/main/pg_hba.conf -- Editar archivo de configuración
 sudo systemctl reload postgresql -- Reiniciar 
-
--- EXPORTAR E IMPORTAR BASE DE DATOS
--> pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
-    ->> \i f2.dump -- Importar base de datos desde un fichero llamado `f2.dump`
--> pg_dump -U postgres -Fc futbol2 > f2c.dump -- Exportar base de datos a un fichero comprimido llamado `f2c.dump`
-    ->> pg_restore -U postgres -C -d postgres f2c.dump -- Importar base de datos desde un fichero comprimido llamado `f2c.dump`
--> pg_restore -U postgres -a -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
-
--- PLANTILLAS
-- createdb -U postgres -T template0 futbolrestaurada -- Crear base de datos a partir de una plantilla
-- pg_restore -U postgres -d futbolrestaurada f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
-
-pg_dump -U postgres --table='fu.x*' -Fp futbol2 > fup.dump -- Exportar tablas que empiecen por 'fu.x' a un fichero llamado `f2.dump`
-```
-```sql
+-----------------------------------------------------------------
 select user; -- Ver usuario actual
 psql dam postgres -- Conectarse a una base de datos con usario postgres
 psql dam a -- Conectarse a una base de datos con usario a
 \c dam -- Conectarse a una base de datos (cambiar de base de datos)
 \dn -- Ver esquemas
+\dn+ -- Ver esquemas con descripción y privi
 \du -- Ver usuarios
 \dt -- Ver tablas
 \d tabla -- Ver descripción de una tabla
@@ -133,6 +120,38 @@ rollback; -- Deshacer cambios
 
 -- As politicas restrictivas seleccionan para a operacion espacificada as filas que cumplan as espresions Using utilizada
 ```
+
+
+##  <u>*Copias de seguridade e restauración*</u>
+### `EXPORTAR E IMPORTAR BASE DE DATOS`
+```sql
+-> pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
+    ->> \i f2.dump -- Importar base de datos desde un fichero llamado `f2.dump`
+-> pg_dump -U postgres -Fc futbol2 > f2c.dump -- Exportar base de datos a un fichero comprimido llamado `f2c.dump`
+    ->> pg_restore -U postgres -C -d postgres f2c.dump -- Importar base de datos desde un fichero comprimido llamado `f2c.dump`
+-> pg_restore -U postgres -a -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
+    -- Opciones a la hora de exportar una base de datos:
+    -a --> datos
+    -s --> estructura
+
+    pg_dump -U postgres -a --inserts -Fp futbol2 > f.dump
+
+    pg_dump -U postgres -a --column-inserts -Fp futbol2 > f.dump
+    create table fa.equipo; -- Crear tabla
+
+-> pg_dump -U postgres -n 'fa' -Fp futbol2 > f.dump -- Exportar esquema fa a un fichero llamado `f.dump`
+-> pg_dump -U postgres -N 'fa' -Fp futbol2 > f.dump -- Exportar todo menos el esquema fa a un fichero llamado `f.dump`
+-> pg_dump -U postgres -N 'fu' -N 'public' -Fp futbol2 > f.dump  -- Exportar todo menos los esquemas fu y public a un fichero llamado `f.dump`
+-> pg_dump -U postgres -N 'fu' -T 'equipo' -Fp futbol2 > f.dump -- Exportar todo menos el esquema fu y la tabla equipo a un fichero llamado `f.dump`
+-> pg_dump -U postgres -c -Fp futbol2 > f.dump -- Exportar base de datos con la estructura de la base de datos
+```
+### `CREAR BASE DE DATOS A PARTIR DE UNA PLANTILLA`
+```sql
+-> createdb -U postgres -T template0 futbolrestaurada -- Crear base de datos a partir de una plantilla
+-> pg_restore -U postgres -d futbolrestaurada f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
+
+pg_dump -U postgres --table='fu.x*' -Fp futbol2 > fup.dump -- Exportar tablas que empiecen por 'fu.x' a un fichero llamado `f2.dump`
+```
 ---
 ---
 ### ***[ERRORES FRECUENTES]***
@@ -145,4 +164,32 @@ ERROR:  null value in column "codx" of relation "xogador" violates not-null cons
 ERROR: cannot insert into v2 values('x41', 'luis', 'e9', 'laso'); -- No se puede insertar en una vista con dos tablas
 ```
 
-alter table xogador enable row level security; -- Habilitar permisos a nivel de fila
+## *`EXAMEN`*
+<details>
+  <summary></summary>
+
+  ```sql
+QUÉ ENTRA EN EL EXAMEN:
+-- Crear bases, usuarios, esquemas, vistas, roles (de privilexios, de usuarios)
+-- Borrar bases, usuarios, esquemas, vistas, roles
+-- Privilexios para todo lo anterior
+Privilexios sobre obxectos a nivel de tabla y de columna --> ACL (Access Control List) 
+         - Tabla: insert, delete, update, select 
+         - Columna: select, update
+         - Con posibilidade de darllo a outros: with grant option
+Privilexios a nivel de fila --> RLS (Row Level Security)
+         - Permisivas
+         - Restrictivas
+Diccionario de datos (vistas con información del sistema)
+         - Comandos abreviados
+         - Vistas
+         - Vistas con información do sistema
+Copias de seguridade e restauración
+         - pg_dump
+         - pg_restore
+Transacciones
+         Begin;
+            operaciones
+         commit; (se confirma) / rollback; (se deshace)
+```
+
