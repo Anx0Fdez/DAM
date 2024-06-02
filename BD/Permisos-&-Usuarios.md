@@ -42,6 +42,8 @@ UC -> U: Usage | C: Create tables
 
 alter user u3 in database dam set search_path to es3; -- Cambiar el esquema por defecto de un usuario
 alter schema es4 owner to u4; -- Cambiar el propietario de un esquema
+
+alter user uxia in database farmacia set search_path to euxia; -- Pon como esquema de busqueda por defecto para as taboa futuras do usuario uxia a o esquema euxia
 ```
 #### *CREAR Y ADMINISTRAR TABLAS*
 
@@ -74,6 +76,8 @@ DAR PERMISOS ENTRE USUARIOS [GRANT]
 -> alter default privileges in schema a grant select on tables to b; -- Dar permisos por defecto a b
 -> grant insert on es3.equipo to u4 with grant option; -- Dar permisos a u4 con opcion de dar el mismo permiso a otros
 -> grant select (codx, nomx) on xogador to u4; -- Dar permisos a u4 en las columnas codx y nomx de la tabla xogador
+
+grant update (campo) on tabla to usuario; -- Dar permiso editar un capo especifico de una tabla
 ```
 ```sql
 QUITAR PERMISOS ENTRE USUARIOS [REVOKE]
@@ -121,18 +125,15 @@ rollback; -- Deshacer cambios
 -- As politicas restrictivas seleccionan para a operacion espacificada as filas que cumplan as espresions Using utilizada
 ```
 
-
 ##  <u>*Copias de seguridade e restauración*</u>
 ### `EXPORTAR E IMPORTAR BASE DE DATOS`
+#### `PGDUMP`
+
 ```sql
 -> pg_dump -U postgres -Fp futbol2 > f2.dump -- Exportar base de datos a un fichero llamado `f2.dump`
     ->> \i f2.dump -- Importar base de datos desde un fichero llamado `f2.dump`
 -> pg_dump -U postgres -Fc futbol2 > f2c.dump -- Exportar base de datos a un fichero comprimido llamado `f2c.dump`
     ->> pg_restore -U postgres -C -d postgres f2c.dump -- Importar base de datos desde un fichero comprimido llamado `f2c.dump`
--> pg_restore -U postgres -a -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
-    -- Opciones a la hora de exportar una base de datos:
-    -a --> datos
-    -s --> estructura
 
     pg_dump -U postgres -a --inserts -Fp futbol2 > f.dump
 
@@ -144,7 +145,30 @@ rollback; -- Deshacer cambios
 -> pg_dump -U postgres -N 'fu' -N 'public' -Fp futbol2 > f.dump  -- Exportar todo menos los esquemas fu y public a un fichero llamado `f.dump`
 -> pg_dump -U postgres -N 'fu' -T 'equipo' -Fp futbol2 > f.dump -- Exportar todo menos el esquema fu y la tabla equipo a un fichero llamado `f.dump`
 -> pg_dump -U postgres -c -Fp futbol2 > f.dump -- Exportar base de datos con la estructura de la base de datos
+-> pg_dump -U postgres --table='fu.x*' -Fp futbol2 > fup.dump -- Exportar tablas que empiecen por 'fu.x' a un fichero llamado `f2.dump`
+-> pg_dump -U postgres -s -d futbol2 > f2.dump -- Exportar solo la estructura de la base de datos a un fichero llamado `f2.dump`
+
+
+pg_dump -U postgres --table='fu.x' -Fp futbol2'* - Exporta solo las tablas del esquema fu que empiecen por x.
+pg_dump -U postgres --table='fu.x' --table='fu.interven' --table='fu.adestra' -Fp futbol2 > fup2.dump* - Exporta solo las tablas del esquema fu que empiecen por x, y que contengan interven e adestra, y se copia en el fichero fup2.dump.
+pg_dump -U postgres -a --table='fu.x' --table='fu.interven' --table='fu.adestra' -Fp futbol2 > fup2.dump* - Si se le añade -a solo va a exportar los datos de las tablas, no las tablas enteras (no podrá volver a crear las tablas). Algunos de los parámetros más útiles para la creación de copias de seguridad:
+pg_dump -U postgres -s -t fu.x -t fu.interven -Fp futbol2 > f2.dump -- exportar la estructura de dos tablas de la base de datos futbol2 a un fichero llamado f2.dump
+pg_dump -U postgres -t fu.xogador -Fp futbol2 > f2.dump -- exportar en un archivo de texto la tabla xogador de la base de datos futbol2 
 ```
+
+#### `PGRESTORE`
+```sql
+-> pg_restore -U postgres -a -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
+    -- Opciones a la hora de exportar una base de datos:
+    -a --> datos
+    -s --> estructura
+
+-> pg_restore -U postgres -C -d postgres f2c.dump -- Restaurar base de datos desde un fichero comprimido llamado `f2c.dump`
+-> pg_restore -U postgres -d futbol2 f2.dump -- Restaurar base de datos desde un fichero llamado `f2.dump`
+
+
+```
+
 ### `CREAR BASE DE DATOS A PARTIR DE UNA PLANTILLA`
 ```sql
 -> createdb -U postgres -T template0 futbolrestaurada -- Crear base de datos a partir de una plantilla
@@ -152,7 +176,16 @@ rollback; -- Deshacer cambios
 
 pg_dump -U postgres --table='fu.x*' -Fp futbol2 > fup.dump -- Exportar tablas que empiecen por 'fu.x' a un fichero llamado `f2.dump`
 ```
----
+
+### `TRANSCIONES`
+```sql
+begin; -- Iniciar transacción
+    insert into t1 values (1); -- Insertar valores
+    insert into t1 values (2);
+
+commit; -- Confirmar transacción
+rollback; -- Deshacer transacción
+```
 ---
 ### ***[ERRORES FRECUENTES]***
 ```sql
@@ -192,4 +225,6 @@ Transacciones
             operaciones
          commit; (se confirma) / rollback; (se deshace)
 ```
+
+
 
