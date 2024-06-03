@@ -21,7 +21,7 @@ psql dam a -- Conectarse a una base de datos con usario a
 \dt -- Ver tablas
 \d tabla -- Ver descripción de una tabla
 \dv -- Ver vistas
-\dp -- Ver permisos de usuarios en tablas
+\dp+ -- Ver permisos de usuarios en tablas
 \l -- Ver bases de datos
 \z -- Ver permisos de usuarios en vistas y tablas
 \dt a.* -- Ver tablas de otro usuario
@@ -36,14 +36,14 @@ create user a with password 'a'; -- Crear usuario
 ```
 #### *CREAR Y ADMINISTRAR ESQUEMAS*
 ```sql
-UC -> U: Usage | C: Create tables
+UC -> U: Usage | C: Create tables 
 1.01 create schema a authorization a; -- Crear esquema
 1.02 drop schema a; -- Eliminar esquema
 
 alter user u3 in database dam set search_path to es3; -- Cambiar el esquema por defecto de un usuario
-alter schema es4 owner to u4; -- Cambiar el propietario de un esquema
+[DESPUES DE CAMBIAR EL ESQUEMA POR DEFECTO DE UN USUARIO, DEBEMOS REINICIAR LA SESIÓN]
 
-alter user uxia in database farmacia set search_path to euxia; -- Pon como esquema de busqueda por defecto para as taboa futuras do usuario uxia a o esquema euxia
+alter schema es4 owner to u4; -- Cambiar el propietario de un esquema
 ```
 #### *CREAR Y ADMINISTRAR TABLAS*
 
@@ -62,7 +62,22 @@ a -- Añadir (insert)
 r -- Leer (select)
 w -- Escribir (update)
 d -- Borrar (delete)
+```
 
+|    Tipo    | Abreviatura |
+|------------|-------------|
+| Insert     | a           |
+| Select     | r           |
+| Update     | w           |
+| Delete     | d           |
+| Truncate   | D           |
+| References | x           |
+| Trigger    | t           |
+| Usage      | U           |
+| Create     | C           |
+| Connect    | c           |
+| Database   | CTc         |
+```sql
 VER PERMISOS DE UN USUARIO [SELECT]
 select * from information_schema.table_privileges where grantee = 'u3'; -- Ver permisos de un usuario
 select * from information_schema.table_privileges where table_name = 'equipo'; -- Ver permisos de una tabla
@@ -186,6 +201,10 @@ begin; -- Iniciar transacción
 commit; -- Confirmar transacción
 rollback; -- Deshacer transacción
 ```
+
+### `DEPENDENCIAS DE PERMISOS DE TABLAS` 
+```sql
+
 ---
 ### ***[ERRORES FRECUENTES]***
 ```sql
