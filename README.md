@@ -1,62 +1,66 @@
-# **APUNTES DAM**
+# **DAM**
+
 ### *by: [Anxo Fdez]*
+
 #### *github: [Anx0Fdez](https://github.com/Anx0Fdez)*
 
-
-## **Índice**  
-1. [**Introducción**](#introducción)
-2. [**Lenguajes de Programación**](#lenguajes-de-programación)
-3. [**Lenguajes de Marcas**](#lenguajes-de-marcas)
-4. [**Tecnologías**](#tecnologías)
-
----
-
-## **Introducción**
-En este repositorio encontrarás información sobre los lenguajes de programación y tecnologías que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. Los apuntes están estructurados de la siguiente manera:
-- <u>**Lenguajes de Programación**</u>: En esta sección encontrarás información sobre los lenguajes de programación que se imparten en el ciclo. Cada lenguaje de programación tiene su propio archivo con información sobre su sintaxis, características y ejemplos de código.
-- <u>**Tecnologías**</u>: En esta sección encontrarás información sobre las tecnologías que se imparten en el ciclo. Cada tecnología tiene su propio archivo con información sobre su uso, características y ejemplos de código.
+## **Índice**
 
 
+# Primero [1]
 
-## <u>**Lenguajes de Programación**</u>
-En esta sección encontrarás información sobre los lenguajes de programación que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. A continuación, se muestra una lista de los lenguajes de programación disponibles:
+<div style="border: 1px solid white; padding: 0px 10px 10px 40px; border-radius: 3px; background-color:transparent ; color: white;">
+
+## **Programación**
 
 - ### <u>***Java***</u>
     - [*<u>Java 1ªEvaluación</u>*](PROGRAMACION/JAVA-1EVA.md)
     - [*<u>Java 2ªEvaluación</u>*](PROGRAMACION/JAVA-2EVA.md)
     - [*<u>Java 3ªEvaluación</u>*](PROGRAMACION/JAVA-3EVA.md)
-    
+
+## **Sistemas Informáticos**
+
 - ### <u>***Manejo de Terminal***</u>
     - [*<u>Comandos CMD</u>*](SI/Cmd.md)
     - [*<u>Comandos BASH</u>*](SI/Bash.md)
 
-    
-
-## <u>**Tecnologías**</u>
-En esta sección encontrarás información sobre las tecnologías que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. A continuación, se muestra una lista de las tecnologías disponibles:
+## **Bases de Datos**
 
 - ### <u>***PostgreSQL***</u>
     - [*<u>Gestión de Permisos y Usuarios</u>*](BD/Permisos-&-Usuarios.md)
     - [*<u>Triggers y Procedimientos</u>*](BD/Triggers-&-Procedimientos.md)
+
+## **Contornos de Desarrollo**
+
 - ### <u>***Git***</u>
     - [*<u>Comandos Git</u>*](COD/Git.md)
 - ### <u>***JUnit***</u>
     - [*<u>Uso de JUnit</u>*](COD/JUnit.md)
 
-## <u>**Lenguajes de Marcas**</u>
-En esta sección encontrarás información sobre los lenguajes de marcas que se imparten en el ciclo de Desarrollo de Aplicaciones Multiplataforma. A continuación, se muestra una lista de los lenguajes de marcas disponibles:
+## **Lenguajes de Marcas**
 
 - ### <u>***HTML***</u>
     - [*<u>HTML Básico</u>*](LMSXI/HTML.md)
 - ### <u>***CSS***</u>
     - [*<u>CSS Básico</u>*](COD/HTML.md)
-- [**XML**](XML.md)
-- [**Markdown**](MARKDOWN.md)
-- [**JSON**](JSON.md)
-- [**XPath**](XPATH.md)
-- [**Xquery**](XQUERY.md)
+
+</div>
+
+# Segundo [2]
+<div style="border: 1px solid white; padding: 0px 10px 10px 40px; border-radius: 3px; background-color:transparent ; color: white;">
+
+## **Acceso a Datos**
+
+## **Programación Multimedia y Dispositivos Móviles**
+
+## **Sistemas de Gestión Empresarial**
+
+## **Programación de Servicios y Procesos**
+
+## **Empresa e Iniciativa Emprendedora**
+
+## **Desarrollo de Interfaces**
 
 
 
-
-
+</div>
