@@ -1,0 +1,3 @@
+p1	parafusos	3
+p2	cravos	4
+p3	tachas	5

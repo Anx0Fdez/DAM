@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Copy copy = new Copy();
+        copy.copiarTexto("texto1.txt");
     }
 }
