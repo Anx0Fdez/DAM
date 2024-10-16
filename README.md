@@ -9,7 +9,6 @@
 
 # Primero [1]
 
-<div style="border: 1px solid white; padding: 0px 10px 10px 40px; border-radius: 3px; background-color:transparent ; color: white;">
 
 ## **Programación**
 
@@ -44,14 +43,18 @@
 - ### <u>***CSS***</u>
     - [*<u>CSS Básico</u>*](COD/HTML.md)
 
-</div>
 
 # Segundo [2]
-<div style="border: 1px solid white; padding: 0px 10px 10px 40px; border-radius: 3px; background-color:transparent ; color: white;">
 
 ## **Acceso a Datos**
 
 ## **Programación Multimedia y Dispositivos Móviles**
+- ### <u>***KOTLIN***</u>
+
+## **Desarrollo de Interfaces**
+- ### <u>***PYTHON***</u>
+
+
 
 ## **Sistemas de Gestión Empresarial**
 
@@ -59,8 +62,5 @@
 
 ## **Empresa e Iniciativa Emprendedora**
 
-## **Desarrollo de Interfaces**
 
 
-
-</div>
