@@ -22,4 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "HelloWorldAndroid"
 include(":app")
 include(":app")
+include(":app")
+include(":app")
+include(":app")
  

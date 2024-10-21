@@ -4,4 +4,10 @@
     <style name="Theme.HelloWorldAndroid" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="Theme.HelloWorld" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.JeckpackCompose01" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.JetpackCompose01" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.BasicCodeLab" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
