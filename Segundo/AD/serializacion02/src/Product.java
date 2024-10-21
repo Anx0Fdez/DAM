@@ -17,6 +17,7 @@ public class Product implements Serializable {
     public Product() {
     }
 
+
     // Getters e Setters
     public String getCodigo() {
         return codigo;
