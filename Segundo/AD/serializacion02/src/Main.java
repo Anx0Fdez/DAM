@@ -1,10 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        Product pro2 = new Product("cod2", "cravos", 4.0);
-        Product pro3 = new Product("cod3", "tachas", 6.0);
-        Product pro4 = new Product("cod4", "grapas", 2.0);
+        // Datos de exemplo
+        String[] cod = {"p1", "p2", "p3"};
+        String[] desc = {"parafusos", "cravos", "tachas"};
+        int[] prezo = {3, 4, 5};
 
-        Product product = new Product();
-        product.escribirTXT(pro2, pro3, pro4);
+        // Crear un array de produtos
+        Product[] productos = new Product[cod.length];
+        for (int i = 0; i < cod.length; i++) {
+            productos[i] = new Product(cod[i], desc[i], prezo[i]);
+        }
+
+        // Escribir produtos nun arquivo binario
+        String filePath = "productos.bin";
+        Product.escribirProductos(productos, filePath);
+
+        // Ler produtos desde o arquivo binario
+        System.out.println("Lendo produtos desde o arquivo:");
+        Product.leerProductos(filePath);
     }
 }
