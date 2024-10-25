@@ -1,14 +1,15 @@
 # Tarea 4
 
 ---
-#### ***1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en esta guía sigue sus instrucciones para instalar LAMP en dicho contenedor.***
+### **Apartado 1**
+#### ***Utiliza la imagen de Ubuntu , tag 22 y apoyandote en esta guía sigue sus instrucciones para instalar LAMP en dicho contenedor.***
 
 `sudo docker run -it ubuntu:22.04`
 
 `apt update` # Actualiza la lista de paquetes
 
 
-#### ***1.2 Crea un contenedor con la imagen de Ubuntu 22.04 y ejecuta el comando tail -f /dev/null para mantenerlo en ejecución.***
+#### ***Crea un contenedor con la imagen de Ubuntu 22.04 y ejecuta el comando tail -f /dev/null para mantenerlo en ejecución.***
 
 `sudo docker run -d --name ubuntu1 ubuntu:22.04 tail -f /dev/null` 
 
@@ -16,11 +17,9 @@
 
 `docker exec -it cnt_ubuntu sh` # Para ingresar al contenedor
 
-#### 1.3 Una vez dentro vamos a instalar LAMP en el contenedor
+#### Una vez dentro vamos a instalar LAMP en el contenedor
 
 `apt update` # Actualiza la lista de paquetes
-
-`apt install apache2` # Instala Apache
 
 `apt install -y apache2 apache2-utils` # Instala Apache
 
@@ -42,7 +41,13 @@ service mariadb start
 mysql_secure_installation
  ```
 
-#### ***2. Instalar Wordpress en el contenedor de Ubuntu 22.04***
+---
+![MariaDB](IMG/MariaDB.png)
+
+---
+### **Apartado 2**
+
+#### ***Instalar Wordpress en el contenedor de Ubuntu 22.04***
 
 Instalar dependencias de Wordpress
 ``` bash
@@ -58,16 +63,37 @@ apt install ghostscript \
             php-zip
 ```
 
+Crear carpeta para Wordpress
+``` bash
+mkdir /var/www/html/wordpress
+```
+
 Descargar Wordpress y descomprimirlo en una carpeta llamada `wordpress`
 ``` bash
 wget https://wordpress.org/latest.tar.gz
+```
+*POSIBLE ERROR*
+``` bash
+wget https://wordpress.org/latest.tar.gz
+sh: 29: wget: not found
+```
+Para solucionar este error, instalar `wget`
+`apt install wget`
+
+``` bash
 tar -xvf latest.tar.gz
 mv wordpress /var/www/html/
 ```
-Comprobar que puedes acceder a wordpress 
-``` bash
-http://localhost/wordpress
-```
+
+### **Apartado 3**
+
+Comprobar que puedes acceder a wordpress desde el navegador
+
+`http://dirección_IP_del_contenedor`
+
+
+
+
 
 
 
