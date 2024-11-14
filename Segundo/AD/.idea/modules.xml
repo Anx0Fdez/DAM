@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/26baserelacionalA/26baserelacionalA.iml" filepath="$PROJECT_DIR$/26baserelacionalA/26baserelacionalA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/26primitiveutfchars/26primitiveutfchars.iml" filepath="$PROJECT_DIR$/26primitiveutfchars/26primitiveutfchars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/27copycaracteres/27copycaracteres.iml" filepath="$PROJECT_DIR$/27copycaracteres/27copycaracteres.iml" />
+      <module fileurl="file://$PROJECT_DIR$/27copycaracteres2/27copycaracteres2.iml" filepath="$PROJECT_DIR$/27copycaracteres2/27copycaracteres2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/29aleatorio/29aleatorio.iml" filepath="$PROJECT_DIR$/29aleatorio/29aleatorio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/29textodelimitado/29textodelimitado.iml" filepath="$PROJECT_DIR$/29textodelimitado/29textodelimitado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5serializacion01/5serializacion01.iml" filepath="$PROJECT_DIR$/5serializacion01/5serializacion01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AD.iml" filepath="$PROJECT_DIR$/.idea/AD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CopyByteImaxes2/CopyByteImaxes2.iml" filepath="$PROJECT_DIR$/CopyByteImaxes2/CopyByteImaxes2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProductsStream/ProductsStream.iml" filepath="$PROJECT_DIR$/ProductsStream/ProductsStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProyectoArchivos/ProyectoArchivos.iml" filepath="$PROJECT_DIR$/ProyectoArchivos/ProyectoArchivos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XMLproba0ler/XMLproba0ler.iml" filepath="$PROJECT_DIR$/XMLproba0ler/XMLproba0ler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XMLreader/XMLreader.iml" filepath="$PROJECT_DIR$/XMLreader/XMLreader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XMLwriter/XMLwriter.iml" filepath="$PROJECT_DIR$/XMLwriter/XMLwriter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baserelacionalB/baserelacionalB.iml" filepath="$PROJECT_DIR$/baserelacionalB/baserelacionalB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/copyBytes/copyBytes.iml" filepath="$PROJECT_DIR$/copyBytes/copyBytes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primitiveWriteUTF/primitiveWriteUTF.iml" filepath="$PROJECT_DIR$/primitiveWriteUTF/primitiveWriteUTF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primitiveWritechars/primitiveWritechars.iml" filepath="$PROJECT_DIR$/primitiveWritechars/primitiveWritechars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serializacion02/serializacion02.iml" filepath="$PROJECT_DIR$/serializacion02/serializacion02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlproba0/xmlproba0.iml" filepath="$PROJECT_DIR$/xmlproba0/xmlproba0.iml" />
+    </modules>
+  </component>
+</project>

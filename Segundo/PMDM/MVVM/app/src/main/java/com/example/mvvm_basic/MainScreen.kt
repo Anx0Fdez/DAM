@@ -32,7 +32,7 @@ fun MainScreen(viewModel: MainViewModel) {
             ) {
                 Text("1")
             }
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(14.dp))
             Button(
                 onClick = { viewModel.checkGuess(2) },
                 colors = ButtonDefaults.buttonColors(
@@ -44,7 +44,7 @@ fun MainScreen(viewModel: MainViewModel) {
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(14.dp))
 
         Row {
             Button(
@@ -56,7 +56,7 @@ fun MainScreen(viewModel: MainViewModel) {
             ) {
                 Text("3")
             }
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(14.dp))
             Button(
                 onClick = { viewModel.checkGuess(4) },
                 colors = ButtonDefaults.buttonColors(

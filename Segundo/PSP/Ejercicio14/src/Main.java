@@ -1,34 +1,38 @@
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Clase principal que manexa a entrada de texto e a execución dos fíos
+ * para contar o número total de vogais no texto.
+ */
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce unha frase:");
-        String frase = sc.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce o texto: ");
+        String text = scanner.nextLine();
+        scanner.close();
 
-        // Creación de fíos para contar cada vogal
-        Thread fío1 = new Thread(new ContadorVogais("Fío 1", 'a', frase));
-        Thread fío2 = new Thread(new ContadorVogais("Fío 2", 'e', frase));
-        Thread fío3 = new Thread(new ContadorVogais("Fío 3", 'i', frase));
-        Thread fío4 = new Thread(new ContadorVogais("Fío 4", 'o', frase));
-        Thread fío5 = new Thread(new ContadorVogais("Fío 5", 'u', frase));
+        // Variable compartida para almacenar o contador total de vogais
+        AtomicInteger totalVowelCount = new AtomicInteger(0);
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
-        // Inicio dos fíos
-        fío1.start();
-        fío2.start();
-        fío3.start();
-        fío4.start();
-        fío5.start();
-
-        // Espera a que todos os fíos rematen
-        try {
-            fío1.join();
-            fío2.join();
-            fío3.join();
-            fío4.join();
-            fío5.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        // Crear e iniciar un fío para cada vogal
+        Thread[] threads = new Thread[5];
+        for (int i = 0; i < vowels.length; i++) {
+            threads[i] = new Thread(new ContadorVogais(text, vowels[i], totalVowelCount));
+            threads[i].start();
         }
+
+        // Agardar a que todos os fíos rematen
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        // Imprimir o número total de vogais
+        System.out.println("Número total de vogais: " + totalVowelCount.get());
     }
 }

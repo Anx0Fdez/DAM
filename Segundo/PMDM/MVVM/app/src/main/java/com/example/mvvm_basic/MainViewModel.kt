@@ -1,7 +1,6 @@
 package com.example.mvvm_basic
 
 import androidx.lifecycle.ViewModel
-import com.example.mvvm_basic.Datos
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
