@@ -22,7 +22,7 @@ public class exa15brevep {
             String query = "SELECT c.codp,c.peso,comp.graxa " + "FROM composicion c " + "JOIN componentes comp ON c.codp = comp.codigo " + "WHERE c.codp IN ('p1','p2')";
             ResultSet rs = stmt.executeQuery(query);
 
-            // Agora imos calcular a graxa total de cada prato
+            // Agora imos calcular a graxa total de cada pratok
             Map<String, Double> graxaTotalMap = new HashMap<>();
             while (rs.next()){
                 String codp = rs.getString("codp");

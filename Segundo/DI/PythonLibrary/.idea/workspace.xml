@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4b9dcd-dd3d-46ee-ae41-6c7c28c1015d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonLibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/ExerciciosPython.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciciosPython/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/exerPython.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/material_theme_project_new.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/exer6.1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerPython/exer6.2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AD/exa15brevep/src/exa15brevep.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AD/exa15brevep/src/exa15brevep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +72,7 @@
       <workItem from="1730203010986" duration="189000" />
       <workItem from="1730203435300" duration="1080000" />
       <workItem from="1730888919359" duration="2000" />
+      <workItem from="1732011947763" duration="1966000" />
     </task>
     <servers />
   </component>
