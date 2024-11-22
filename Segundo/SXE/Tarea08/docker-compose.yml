@@ -1,0 +1,31 @@
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: dam
+      WORDPRESS_DB_PASSWORD: amante3
+      WORDPRESS_DB_NAME: wordpressBD
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpressBD
+      MYSQL_USER: dam
+      MYSQL_PASSWORD: amante3
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
+
+
