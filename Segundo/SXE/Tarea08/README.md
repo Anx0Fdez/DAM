@@ -2,8 +2,8 @@
 ###### Anxo Fernández Rodríguez
 ### *Entramos en wordpress e accedemos á pestaña de inicio*
 <div style="display: flex;">
-  <img src="img/img2.png" style="width: 50%;">
-  <img src="img/img3.png" style="width: 50%;">
+  <img src="img/img2.png" style="width: 49%;">
+  <img src="img/img3.png" style="width: 49%;">
 </div>
 
 ---
@@ -17,8 +17,8 @@
 6. Dar click en activar.
 
 <div style="display: flex;">
-  <img src="img/img1.png" style="width: 50%;">
-  <img src="img/img4.png" style="width: 50%;">
+  <img src="img/img1.png" style="width: 49%;">
+  <img src="img/img4.png" style="width: 49%;">
 </div>
 
 ---
@@ -31,8 +31,8 @@
 6. Dar click en engadir novo usuario.
 
 <div style="display: flex;">
-  <img src="img/us1.png" style="width: 50%;">
-  <img src="img/us2.png" style="width: 50%;">
+  <img src="img/us1.png" style="width: 49%;">
+  <img src="img/us2.png" style="width: 49%;">
 </div>
 
 ---

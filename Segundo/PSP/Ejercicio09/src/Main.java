@@ -8,5 +8,7 @@ public class Main {
         fíoPares.start();
         fíoImpares.start();
         fíoEspecíficos.start();
+
+
     }
 }
