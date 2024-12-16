@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/newPythonProject.iml" filepath="$PROJECT_DIR$/.idea/newPythonProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GTK.iml" filepath="$PROJECT_DIR$/.idea/GTK.iml" />
     </modules>
   </component>
 </project>
