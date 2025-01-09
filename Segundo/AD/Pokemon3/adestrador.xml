@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Adestradores>
+    <Adestrador id="1">
+        <Nome>Ash Ketchum</Nome>
+        <Nacemento>1990-05-22 00:00:00.0</Nacemento>
+    </Adestrador>
+    <Adestrador id="2">
+        <Nome>Misty Waterflower</Nome>
+        <Nacemento>1992-08-14 00:00:00.0</Nacemento>
+    </Adestrador>
+</Adestradores>
